@@ -359,7 +359,7 @@ em { color: var(--ink-light); }
 <li><strong>No Stat Inflation.</strong> Stats start between 9 and 12 and grow slowly. A level 20 hero is formidable, not a demigod. The math stays tight from level 1 to level 20.</li>
 <li><strong>Every Level Matters.</strong> There are no dead levels. Every single level grants a meaningful new ability&mdash;not just a number increase, but something that changes how you play.</li>
 <li><strong>Reactive Combat.</strong> You declare reactions <em>after</em> the enemy rolls to hit but <em>before</em> damage is rolled. Every incoming attack is a tactical decision: dodge, block, parry, or take the hit and save your actions?</li>
-<li><strong>One Resource System.</strong> Fighters, Rogues, and Mages all use the same unified resource&mdash;Stamina. No tracking separate spell slots, rage charges, and ki points. One pool, three different ways to spend it.</li>
+<li><strong>Class-Specific Resources.</strong> Fighters build <strong>Rage</strong> through violence, Rogues maintain <strong>Flow</strong> through movement, and Mages protect their <strong>Focus</strong> through positioning. Each resource ebbs and flows differently in combat, creating distinct tactical rhythms for each class.</li>
 <li><strong>Feats Add Options, Not Numbers.</strong> Feats give you new things to do, not passive stat bonuses. Your class defines your power; feats define your style.</li>
 </ul>
 
@@ -378,8 +378,8 @@ em { color: var(--ink-light); }
 <tbody>
 <tr><td>6 Core Stats</td><td>5 Core Stats (Might, Reflex, Vigor, Sense, Wit)</td></tr>
 <tr><td>d20 rolls (flat, swingy)</td><td>3d6 rolls (bell curve, predictable)</td></tr>
-<tr><td>Multiple resource systems</td><td>One unified Resource: Stamina</td></tr>
-<tr><td>Spell slots &amp; class-specific pools</td><td>Stamina powers everything</td></tr>
+<tr><td>Multiple resource systems</td><td>Three class-specific resources: Rage, Flow, Focus</td></tr>
+<tr><td>Spell slots &amp; class-specific pools</td><td>Resources ebb and flow dynamically in combat</td></tr>
 <tr><td>Dead levels with only +1 HP</td><td>Every level grants a new ability</td></tr>
 <tr><td>Reactions are rare class features</td><td>Reactions are core combat for everyone</td></tr>
 </tbody>
@@ -399,21 +399,21 @@ em { color: var(--ink-light); }
 <table>
 <thead><tr><th>Step</th><th>What You Do</th><th>Chapter</th></tr></thead>
 <tbody>
-<tr><td>1</td><td>Choose a <strong>Race</strong> &mdash; gain a stat bonus and racial traits</td><td><a href="#ch3">III. Races</a></td></tr>
-<tr><td>2</td><td>Assign <strong>Stats</strong> &mdash; distribute the array 12, 11, 10, 10, 9</td><td><a href="#ch4">IV. Stats</a></td></tr>
-<tr><td>3</td><td>Choose a <strong>Background</strong> &mdash; gain a proficiency and narrative benefit</td><td><a href="#ch5">V. Backgrounds</a></td></tr>
-<tr><td>4</td><td>Choose a <strong>Minor Feat</strong> &mdash; pick one from the feat list</td><td><a href="#ch8">VIII. Feats</a></td></tr>
-<tr><td>5</td><td>Record starting HP, Guard, and gear</td><td><a href="#ch10">X. Equipment</a></td></tr>
+<tr><td>1</td><td>Choose a <strong>Race</strong> &mdash; gain a stat bonus, stat penalty, base HP, and racial trait</td><td><a href="#ch3">III. Races</a></td></tr>
+<tr><td>2</td><td>Assign <strong>Stats</strong> &mdash; distribute the array 12, 11, 10, 10, 9; apply racial +1 and &minus;1</td><td><a href="#ch4">IV. Stats</a></td></tr>
+<tr><td>3</td><td>Choose a <strong>Background</strong> &mdash; gain a trade proficiency, choose 2 additional proficiencies, and receive starting gear</td><td><a href="#ch5">V. Backgrounds</a></td></tr>
+<tr><td>4</td><td>Choose <strong>2 Minor Feats</strong> &mdash; pick two from the feat list</td><td><a href="#ch8">VIII. Feats</a></td></tr>
+<tr><td>5</td><td>Record starting <strong>HP</strong> (from race), <strong>Guard</strong>, and gear</td><td><a href="#ch10">X. Equipment</a></td></tr>
 <tr><td>6</td><td>At Level 1, choose a <strong>Class</strong> and <strong>Discipline</strong></td><td><a href="#ch6">VI. Classes</a></td></tr>
 </tbody>
 </table>
 </div>
 
 <h2>Level 0: Your Origin</h2>
-<p>Every character begins at <strong>Level 0</strong>&mdash;an ordinary person before they take up the adventuring life. At Level 0 you choose your Race, assign your stats, pick a Background, and select your first Minor Feat. You have no class yet; that comes at Level 1 when your character answers the call to adventure.</p>
+<p>Every character begins at <strong>Level 0</strong>&mdash;an ordinary person before they take up the adventuring life. At Level 0 you choose your Race (which determines your base HP), assign your stats, pick a Background, and select your first <strong>two Minor Feats</strong>. You have no class yet; that comes at Level 1 when your character answers the call to adventure.</p>
 
 <h2>Level 1: Your Class</h2>
-<p>At Level 1, you choose one of three classes&mdash;<strong>Fighter</strong>, <strong>Rogue</strong>, or <strong>Mage</strong>&mdash;and select a Discipline within that class. This defines your combat role and how you spend your Stamina resource. At Level 5, you further specialize by choosing a Subclass.</p>
+<p>At Level 1, you choose one of three classes&mdash;<strong>Fighter</strong>, <strong>Rogue</strong>, or <strong>Mage</strong>&mdash;and select a Discipline within that class. This defines your combat role and your class-specific resource: Fighters use <strong>Rage</strong>, Rogues use <strong>Flow</strong>, and Mages use <strong>Focus</strong>. At Level 3, you further specialize by choosing a Subclass.</p>
 
 <h2>Leveling</h2>
 <p>Leveling occurs at the <strong>GM's discretion</strong>, with no XP system. The GM awards a new level when the story demands it&mdash;after a major quest, a dramatic turning point, or when the party has earned it through play. Every level grants a meaningful trait; there are <strong>no stat-only levels</strong>. You always get something new to do.</p>
@@ -425,48 +425,47 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch3">
 <h1><span class="chapter-num">Chapter III</span>Races</h1>
 
-<p>Your race represents your character's heritage. Each race grants a <strong>+1 bonus to one stat</strong>, one <strong>unique racial trait</strong>, and one <strong>minor flavor ability</strong>. Races are intentionally simple&mdash;your class and feats define your power, not your bloodline.</p>
+<p>Your race represents your character's heritage. Each race grants a <strong>+1 bonus to one stat</strong>, a <strong>&minus;1 penalty to another stat</strong>, a <strong>base Hit Point value</strong>, and one <strong>unique racial trait</strong>. Races are intentionally simple&mdash;your class and feats define your power, not your bloodline.</p>
+
+<table>
+<thead><tr><th>Race</th><th>Stat Bonus</th><th>Stat Penalty</th><th>Base HP</th><th>Racial Trait</th></tr></thead>
+<tbody>
+<tr><td><strong>Stoneskin</strong></td><td>+1 Vigor</td><td>&minus;1 Wit</td><td>12</td><td>Tough</td></tr>
+<tr><td><strong>Lightfoot</strong></td><td>+1 Reflex</td><td>&minus;1 Might</td><td>10</td><td>Lightfooted</td></tr>
+<tr><td><strong>Ironblood</strong></td><td>+1 Might</td><td>&minus;1 Reflex</td><td>11</td><td>Max Effort</td></tr>
+<tr><td><strong>Keen-eye</strong></td><td>+1 Sense</td><td>&minus;1 Vigor</td><td>9</td><td>Aware</td></tr>
+<tr><td><strong>Quickmind</strong></td><td>+1 Wit</td><td>&minus;1 Sense</td><td>10</td><td>Second Thought</td></tr>
+</tbody>
+</table>
 
 <div class="race-card">
-<h3>Human</h3>
-<p><strong>Stat Bonus:</strong> +1 to any stat of your choice</p>
-<p><strong>Racial Trait &mdash; Adaptable:</strong> You gain one additional Minor Feat at character creation.</p>
-<p><strong>Flavor Ability &mdash; Determined:</strong> Once per long rest, when you fail a skill check, you may reroll it. You must take the second result.</p>
+<h3>Stoneskin</h3>
+<p><strong>Stat Bonus:</strong> +1 Vigor &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Wit &nbsp;|&nbsp; <strong>Base HP:</strong> 12</p>
+<p><strong>Racial Trait &mdash; Tough:</strong> You gain Minor Advantage on stabilization rolls. Your natural resilience makes you harder to bring down once you've fallen.</p>
 </div>
 
 <div class="race-card">
-<h3>Elf</h3>
-<p><strong>Stat Bonus:</strong> +1 Sense</p>
-<p><strong>Racial Trait &mdash; Keen Senses:</strong> You gain proficiency in Perception. If you already have it, you gain Minor Advantage on Perception checks.</p>
-<p><strong>Flavor Ability &mdash; Trance:</strong> You need only 4 hours of meditative rest to gain the benefits of a long rest. You remain semi-conscious during this time.</p>
+<h3>Lightfoot</h3>
+<p><strong>Stat Bonus:</strong> +1 Reflex &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Might &nbsp;|&nbsp; <strong>Base HP:</strong> 10</p>
+<p><strong>Racial Trait &mdash; Lightfooted:</strong> You ignore the first 5 feet of difficult terrain each round. Your nimble steps carry you effortlessly over rough ground.</p>
 </div>
 
 <div class="race-card">
-<h3>Dwarf</h3>
-<p><strong>Stat Bonus:</strong> +1 Vigor</p>
-<p><strong>Racial Trait &mdash; Stout:</strong> You have Minor Advantage on saving throws against poison, and you take 1 less damage from poison effects (minimum 0).</p>
-<p><strong>Flavor Ability &mdash; Stonecunning:</strong> When examining stonework, you automatically notice unusual construction, hidden seams, or traps built into stone.</p>
+<h3>Ironblood</h3>
+<p><strong>Stat Bonus:</strong> +1 Might &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Reflex &nbsp;|&nbsp; <strong>Base HP:</strong> 11</p>
+<p><strong>Racial Trait &mdash; Max Effort:</strong> Once per rest, you may roll a Might check with Major Advantage. When you need to push beyond your limits, your body answers.</p>
 </div>
 
 <div class="race-card">
-<h3>Halfling</h3>
-<p><strong>Stat Bonus:</strong> +1 Reflex</p>
-<p><strong>Racial Trait &mdash; Lucky:</strong> When you roll three 1s (critical failure), you may reroll all dice. You must take the new result.</p>
-<p><strong>Flavor Ability &mdash; Small and Quiet:</strong> You can move through the space of any creature one size larger than you. You gain Minor Advantage on Stealth checks when hiding behind larger creatures.</p>
+<h3>Keen-eye</h3>
+<p><strong>Stat Bonus:</strong> +1 Sense &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Vigor &nbsp;|&nbsp; <strong>Base HP:</strong> 9</p>
+<p><strong>Racial Trait &mdash; Aware:</strong> You cannot be surprised unless you are unconscious or sleeping. Your senses are always alert, catching threats others miss.</p>
 </div>
 
 <div class="race-card">
-<h3>Orc</h3>
-<p><strong>Stat Bonus:</strong> +1 Might</p>
-<p><strong>Racial Trait &mdash; Relentless:</strong> Once per long rest, when damage would reduce you to 0 HP, you drop to 1 HP instead.</p>
-<p><strong>Flavor Ability &mdash; Menacing:</strong> You gain proficiency in Intimidation. If you already have it, you gain Minor Advantage on Intimidation checks.</p>
-</div>
-
-<div class="race-card">
-<h3>Tiefling</h3>
-<p><strong>Stat Bonus:</strong> +1 Wit</p>
-<p><strong>Racial Trait &mdash; Infernal Resistance:</strong> You take 2 less damage from fire effects (minimum 0).</p>
-<p><strong>Flavor Ability &mdash; Darkvision:</strong> You can see in dim light as if it were bright light, and in darkness as if it were dim light, out to 60 feet.</p>
+<h3>Quickmind</h3>
+<p><strong>Stat Bonus:</strong> +1 Wit &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Sense &nbsp;|&nbsp; <strong>Base HP:</strong> 10</p>
+<p><strong>Racial Trait &mdash; Second Thought:</strong> Once per rest, you may reroll a failed Wit check. Your quick mind catches mistakes before they cost you.</p>
 </div>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
@@ -491,7 +490,7 @@ em { color: var(--ink-light); }
 <ul>
 <li><strong>Might</strong> &mdash; Raw physical power. Melee damage, carrying capacity, breaking things, grappling. Used for bow damage (capped by draw weight).</li>
 <li><strong>Reflex</strong> &mdash; Speed and agility. Dodge rolls, initiative, finesse weapon accuracy, Stealth.</li>
-<li><strong>Vigor</strong> &mdash; Toughness and endurance. Hit points, stamina recovery, resisting poison and disease, death threshold.</li>
+<li><strong>Vigor</strong> &mdash; Toughness and endurance. Hit points, resisting poison and disease, death threshold.</li>
 <li><strong>Sense</strong> &mdash; Awareness, perception, intuition, and social reading. Ranged accuracy, initiative, Perception, Insight. Replaces the Wisdom/Charisma perception overlap.</li>
 <li><strong>Wit</strong> &mdash; Intellect, cunning, force of personality, and magical aptitude. Spellcasting, knowledge skills, Persuasion, Deception. Replaces the Intelligence/Charisma overlap.</li>
 </ul>
@@ -501,35 +500,28 @@ em { color: var(--ink-light); }
 <div style="text-align:center; margin: 20px 0; font-size: 1.3em;">
 <strong>12 &bull; 11 &bull; 10 &bull; 10 &bull; 9</strong>
 </div>
-<p>After assigning the array, apply your racial +1 bonus. Stats can increase further through leveling.</p>
+<p>After assigning the array, apply your racial +1 bonus and &minus;1 penalty. Stats can increase further through leveling.</p>
 
 <h2>Stat Modifiers</h2>
-<p>Your <strong>modifier</strong> is derived from your stat score. The modifier is what you add to dice rolls.</p>
+<p>Your <strong>modifier</strong> is derived from your stat score using paired ranges. The modifier is what you add to dice rolls.</p>
 
 <div class="rule-box">
-<div class="callout-title">Modifier Formula</div>
-<p><strong>Modifier = Stat &minus; 10</strong></p>
-</div>
-
+<div class="callout-title">Modifier Table &mdash; Paired Ranges</div>
 <table>
-<thead><tr><th>Stat Score</th><th>Modifier</th><th>Notes</th></tr></thead>
+<thead><tr><th>Stat Range</th><th>Modifier</th></tr></thead>
 <tbody>
-<tr><td>7</td><td>&minus;3</td><td>Severely deficient</td></tr>
-<tr><td>8</td><td>&minus;2</td><td>Below average</td></tr>
-<tr><td>9</td><td>&minus;1</td><td>Slightly below average</td></tr>
-<tr><td>10</td><td>+0</td><td>Average</td></tr>
-<tr><td>11</td><td>+1</td><td>Above average</td></tr>
-<tr><td>12</td><td>+2</td><td>Notably capable</td></tr>
-<tr><td>13</td><td>+3</td><td>Exceptional</td></tr>
-<tr><td>14</td><td>+4</td><td>Remarkable</td></tr>
-<tr><td>15</td><td>+5</td><td>Legendary</td></tr>
-<tr><td>16</td><td>+6</td><td>Peak mortal ability</td></tr>
+<tr><td>8&ndash;9</td><td>&minus;1</td></tr>
+<tr><td>10&ndash;11</td><td>+0</td></tr>
+<tr><td>12&ndash;13</td><td>+1</td></tr>
+<tr><td>14&ndash;15</td><td>+2</td></tr>
+<tr><td>16&ndash;17</td><td>+3</td></tr>
 </tbody>
 </table>
+</div>
 
 <div class="callout">
 <div class="callout-title">Starting Modifier Range</div>
-<p>With the starting array (9&ndash;12) and a racial +1, new characters have modifiers ranging from <strong>&minus;1 to +3</strong>. This keeps the starting math tight: on 3d6 (average 10.5), even a +2 swing is significant. By level 20, the highest stats will reach around 16 (+6), keeping the system grounded.</p>
+<p>With the starting array (9&ndash;12) and a racial +1/&minus;1, new characters have stat scores ranging from 8 to 13, giving modifiers from <strong>&minus;1 to +1</strong>. This keeps the starting math tight: on 3d6 (average 10.5), even a +1 swing is significant. By level 20, the highest stats will reach around 16&ndash;17 (+3), keeping the system grounded.</p>
 </div>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
@@ -539,62 +531,41 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch5">
 <h1><span class="chapter-num">Chapter V</span>Backgrounds</h1>
 
-<p>Your background represents what your character did before becoming an adventurer. Each background grants <strong>one skill proficiency</strong>, a <strong>narrative benefit</strong> (a roleplaying perk the GM adjudicates), and <strong>starting equipment flavor</strong>.</p>
+<p>Your background represents what your character did before becoming an adventurer. Each background offers a <strong>trade proficiency choice</strong> (pick one of two specializations), <strong>2 additional proficiency picks</strong> from a provided list, and <strong>starting gear with gold</strong>.</p>
+
+<div class="bg-card">
+<h3>Outlander</h3>
+<p><strong>Trade Proficiency (choose one):</strong> Hunter (Tracking) <em>or</em> Hermit (Survival)</p>
+<p><strong>Choose 2 Proficiencies from:</strong> Tracking, Hunting, Climbing, Navigate</p>
+<p><strong>Starting Gear:</strong> Bedroll, flint &amp; steel, rope, sling, 3 gp</p>
+</div>
 
 <div class="bg-card">
 <h3>Soldier</h3>
-<p><strong>Proficiency:</strong> Athletics</p>
-<p><strong>Narrative Benefit &mdash; Military Rank:</strong> Soldiers and guards recognize your bearing. You can invoke your former rank to gain access to military camps, requisition simple supplies, or command respect from enlisted folk.</p>
-<p><strong>Starting Gear Flavor:</strong> A rank insignia, a worn weapon maintenance kit, a set of dice.</p>
-</div>
-
-<div class="bg-card">
-<h3>Scholar</h3>
-<p><strong>Proficiency:</strong> Lore</p>
-<p><strong>Narrative Benefit &mdash; Researcher:</strong> When you encounter information you don't know, you often know where or from whom that knowledge can be found&mdash;a library, a sage, an archive.</p>
-<p><strong>Starting Gear Flavor:</strong> A journal of notes, ink and quill, a letter of introduction from a mentor.</p>
-</div>
-
-<div class="bg-card">
-<h3>Criminal</h3>
-<p><strong>Proficiency:</strong> Streetwise</p>
-<p><strong>Narrative Benefit &mdash; Underworld Contact:</strong> You have a reliable contact in the criminal world who can fence goods, gather rumors, or arrange meetings with shady figures.</p>
-<p><strong>Starting Gear Flavor:</strong> A set of lockpicks, dark clothing, a small crowbar.</p>
+<p><strong>Trade Proficiency (choose one):</strong> Infantry (Intimidation) <em>or</em> Scout (Perception)</p>
+<p><strong>Choose 2 Proficiencies from:</strong> 1 Weapon proficiency, Shields, Athletics</p>
+<p><strong>Starting Gear:</strong> Military uniform, 1 basic weapon, 5 gp</p>
 </div>
 
 <div class="bg-card">
 <h3>Artisan</h3>
-<p><strong>Proficiency:</strong> Craft</p>
-<p><strong>Narrative Benefit &mdash; Guild Member:</strong> You belong to a crafting guild. You can find work and lodging in any town with a guild hall, and fellow artisans are generally well-disposed toward you.</p>
-<p><strong>Starting Gear Flavor:</strong> Artisan's tools of your trade, a guild token, a sample of your best work.</p>
+<p><strong>Trade Proficiency (choose one):</strong> Tinkerer (Mechanisms) <em>or</em> Tradesman (Craft)</p>
+<p><strong>Choose 2 Proficiencies from:</strong> Persuasion, Performance, Deception</p>
+<p><strong>Starting Gear:</strong> Basic tool pouch, leather gloves, 10 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Noble</h3>
-<p><strong>Proficiency:</strong> Persuasion</p>
-<p><strong>Narrative Benefit &mdash; Position of Privilege:</strong> Common folk make way for you, merchants offer better prices, and you can secure an audience with local leaders. Your name carries weight.</p>
-<p><strong>Starting Gear Flavor:</strong> Fine clothes, a signet ring, a letter of pedigree.</p>
+<h3>Scholar</h3>
+<p><strong>Trade Proficiency (choose one):</strong> Academic (History) <em>or</em> Healer (Treat Wound)</p>
+<p><strong>Choose 2 Proficiencies from:</strong> Investigation, History, Arcana, 1 additional language</p>
+<p><strong>Starting Gear:</strong> Notebook, ink and quill, lantern, 10 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Outlander</h3>
-<p><strong>Proficiency:</strong> Survival</p>
-<p><strong>Narrative Benefit &mdash; Wanderer:</strong> You have an excellent memory for terrain and can always recall the general layout of regions you've traveled. You can forage food and fresh water for yourself and up to five others in the wild.</p>
-<p><strong>Starting Gear Flavor:</strong> A hunting trap, a trophy from a beast, a hand-drawn map of your homeland.</p>
-</div>
-
-<div class="bg-card">
-<h3>Acolyte</h3>
-<p><strong>Proficiency:</strong> Medicine</p>
-<p><strong>Narrative Benefit &mdash; Shelter of the Faithful:</strong> You and your companions can receive free healing and care at temples of your faith. Priests will provide what aid they can, short of endangering themselves.</p>
-<p><strong>Starting Gear Flavor:</strong> A holy symbol, a prayer book, vestments, and incense.</p>
-</div>
-
-<div class="bg-card">
-<h3>Merchant</h3>
-<p><strong>Proficiency:</strong> Appraisal</p>
-<p><strong>Narrative Benefit &mdash; Trade Network:</strong> You know the trade routes and market conditions in major settlements. You can usually find a buyer for unusual goods and negotiate 10% better prices when selling.</p>
-<p><strong>Starting Gear Flavor:</strong> A set of fine scales, a ledger, a letter of credit from a trading house.</p>
+<h3>Streetrat</h3>
+<p><strong>Trade Proficiency (choose one):</strong> Thief (Pickpocket) <em>or</em> Urchin (Sleight of Hand)</p>
+<p><strong>Choose 2 Proficiencies from:</strong> Sleight of Hand, Deception, Lockpicking, Acrobatics</p>
+<p><strong>Starting Gear:</strong> Lockpick set, fake ID, dagger, old cloak, 3 gp</p>
 </div>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
@@ -604,25 +575,25 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch6">
 <h1><span class="chapter-num">Chapter VI</span>Classes &amp; Disciplines</h1>
 
-<p>At Level 1, you choose one of three classes. Each class has a fundamentally different relationship with the Stamina resource and the action economy. Within each class, you choose a <strong>Discipline</strong>&mdash;a fighting style that grants passive bonuses when its conditions are met.</p>
+<p>At Level 1, you choose one of three classes. Each class has a fundamentally different relationship with its resource and the action economy. Within each class, you choose a <strong>Discipline</strong>&mdash;a fighting style that grants passive bonuses when its conditions are met.</p>
 
 <div class="callout">
 <div class="callout-title">The Three Pillars</div>
 <ul>
-<li><strong>Fighter</strong> &mdash; Controls space through combat modifiers. Spends Stamina on empowering attacks, blocks, and positioning.</li>
-<li><strong>Rogue</strong> &mdash; Creates openings through exploitation. Spends Stamina on modifying attacks, dodges, and blocks to expose enemies and exploit weakness.</li>
-<li><strong>Mage</strong> &mdash; Shapes reality through spell construction. Spends Stamina to forge and modify spells for a variety of outcomes.</li>
+<li><strong>Fighter</strong> &mdash; Controls space through combat modifiers. Builds <strong>Rage</strong> by dealing and taking damage; spends it on empowering attacks, blocks, and positioning.</li>
+<li><strong>Rogue</strong> &mdash; Creates openings through exploitation. Maintains <strong>Flow</strong> by moving, attacking, and dodging; loses it when hit by enemies.</li>
+<li><strong>Mage</strong> &mdash; Shapes reality through spell construction. Protects <strong>Focus</strong> through careful positioning; loses it when targeted or hit.</li>
 </ul>
 </div>
 
 <!-- FIGHTER -->
 <div class="fighter-section">
 <h2>Fighter</h2>
-<p>Fighters are masters of martial combat who control the battlefield through superior technique. They use Stamina to empower their attacks, fortify their defenses, and manipulate positioning. A Fighter's strength is consistency&mdash;they are always dangerous, always reliable, and always in control of the space around them.</p>
+<p>Fighters are masters of martial combat who control the battlefield through superior technique. They build Rage by dealing and taking damage, and spend it to empower their attacks, fortify their defenses, and manipulate positioning. A Fighter's strength is consistency&mdash;they are always dangerous, always reliable, and always in control of the space around them.</p>
 
-<p><strong>Hit Points:</strong> 10 + Vigor modifier per level<br>
+<p><strong>Hit Points:</strong> Determined by race base HP + Vigor modifier per level<br>
 <strong>Guard (Base):</strong> Determined by armor<br>
-<strong>Stamina Pool:</strong> 4 + Vigor modifier (recovers on rest)<br>
+<strong>Resource &mdash; Rage:</strong> Gained by dealing or taking damage. Lost when out of combat, stunned, or unable to act. Starts at 0.<br>
 <strong>Proficiencies:</strong> All simple weapons, light and medium armor, shields</p>
 
 <h3>Fighter Disciplines</h3>
@@ -667,11 +638,11 @@ em { color: var(--ink-light); }
 <!-- ROGUE -->
 <div class="rogue-section">
 <h2>Rogue</h2>
-<p>Rogues are opportunists who thrive on exploiting every weakness. They use Stamina to modify their attacks, dodges, and blocks&mdash;turning every exchange into a chance to expose the enemy for a devastating follow-up. Surprised enemies are Exposed, giving Rogues the highest single-target burst damage in the game.</p>
+<p>Rogues are opportunists who thrive on exploiting every weakness. They maintain Flow by moving, attacking, and dodging&mdash;turning every exchange into a chance to expose the enemy for a devastating follow-up. Flow is lost when hit by enemies, so Rogues must stay elusive. Surprised enemies are Exposed, giving Rogues the highest single-target burst damage in the game.</p>
 
-<p><strong>Hit Points:</strong> 8 + Vigor modifier per level<br>
+<p><strong>Hit Points:</strong> Determined by race base HP + Vigor modifier per level<br>
 <strong>Guard (Base):</strong> Determined by armor<br>
-<strong>Stamina Pool:</strong> 4 + Reflex modifier (recovers on rest)<br>
+<strong>Resource &mdash; Flow:</strong> Gained by moving, attacking, and dodging. Lost when hit by an enemy. Starts at 50% of pool.<br>
 <strong>Proficiencies:</strong> All simple weapons, finesse weapons, light armor</p>
 
 <h3>Rogue Disciplines</h3>
@@ -705,11 +676,11 @@ em { color: var(--ink-light); }
 <!-- MAGE -->
 <div class="mage-section">
 <h2>Mage</h2>
-<p>Mages shape raw magical energy into powerful effects using spell construction. They choose a magical Form (school) and build spells on the fly by combining Base effects with Modifiers. Every spell is a resource decision&mdash;more powerful effects cost more Stamina.</p>
+<p>Mages shape raw magical energy into powerful effects using spell construction. They choose a magical Form (elemental school) and build spells on the fly by combining Base effects with Modifiers. Every spell is a resource decision&mdash;more powerful effects cost more Focus. Focus is maintained through preparation and deliberate action, but erodes when targeted or hit.</p>
 
-<p><strong>Hit Points:</strong> 6 + Vigor modifier per level<br>
+<p><strong>Hit Points:</strong> Determined by race base HP + Vigor modifier per level<br>
 <strong>Guard (Base):</strong> Determined by armor<br>
-<strong>Stamina Pool:</strong> 6 + Wit modifier (recovers on rest)<br>
+<strong>Resource &mdash; Focus:</strong> Gained through preparation and deliberate action. Small loss when targeted, large loss when hit. Starts at full (0 if surprised).<br>
 <strong>Proficiencies:</strong> Simple weapons, no armor (unless gained via feats)</p>
 
 <h3>Mage Disciplines</h3>
@@ -718,7 +689,7 @@ em { color: var(--ink-light); }
 <div class="callout">
 <p><em>Patient and methodical:</em></p>
 <ul>
-<li>Taking an extra action to cast a spell decreases the Stamina cost (stacking) and increases effectiveness</li>
+<li>Taking an extra action to cast a spell decreases the Focus cost (stacking) and increases effectiveness</li>
 </ul>
 </div>
 
@@ -726,7 +697,7 @@ em { color: var(--ink-light); }
 <div class="callout">
 <p><em>Utility specialist:</em></p>
 <ul>
-<li>When casting a spell that has no damage effect, the Stamina cost is reduced by 1 (minimum 1)</li>
+<li>When casting a spell that has no damage effect, the Focus cost is reduced by 1 (minimum 1)</li>
 </ul>
 </div>
 
@@ -734,7 +705,7 @@ em { color: var(--ink-light); }
 <div class="callout">
 <p><em>Master of layered magic:</em></p>
 <ul>
-<li>The third modifier added to a spell costs significantly less Stamina</li>
+<li>The third modifier added to a spell costs significantly less Focus</li>
 </ul>
 </div>
 </div>
@@ -746,7 +717,7 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch7">
 <h1><span class="chapter-num">Chapter VII</span>Subclasses</h1>
 
-<p>At <strong>Level 5</strong>, you choose a Subclass that further defines your role. Subclasses blend the strengths of two class archetypes and unlock powerful new abilities at levels 5, 9, 13, and 17.</p>
+<p>At <strong>Level 3</strong>, you choose a Subclass that further defines your role. Subclasses blend the strengths of two class archetypes and unlock powerful new abilities at levels 3, 8, 11, 14, and 17.</p>
 
 <table>
 <thead><tr><th>Subclass</th><th>Archetype Blend</th><th>Role</th></tr></thead>
@@ -766,17 +737,17 @@ em { color: var(--ink-light); }
 <p><em>Fighter Subclass &mdash; The Battlefield Commander</em></p>
 <p>Warmasters lead from the front. They empower allies, control positioning, and turn every engagement into a coordinated assault.</p>
 
-<h4>Level 5 &mdash; Commanding Presence</h4>
-<p>Once per round, when an ally within 30 feet makes an attack, you can spend 1 Stamina as a free action to grant them +1 to hit.</p>
+<h4>Level 3 &mdash; Commanding Presence</h4>
+<p>Once per round, when an ally within 30 feet makes an attack, you can spend 1 Rage as a free action to grant them +1 to hit.</p>
 
-<h4>Level 9 &mdash; Tactical Repositioning</h4>
-<p>When you take the Attack action, you may spend 1 Stamina to allow one ally within 30 feet to immediately move 10 feet without provoking reactions.</p>
+<h4>Level 8 &mdash; Tactical Repositioning</h4>
+<p>When you take the Attack action, you may spend 1 Rage to allow one ally within 30 feet to immediately move 10 feet without provoking reactions.</p>
 
-<h4>Level 13 &mdash; Rallying Strike</h4>
-<p>When you score a critical success on an attack, all allies within 30 feet recover 1 Stamina.</p>
+<h4>Level 11 &mdash; Rallying Strike</h4>
+<p>When you score a critical success on an attack, all allies within 30 feet recover 1 of their class resource.</p>
 
 <h4>Level 17 &mdash; Supreme Commander</h4>
-<p>At the start of each round, choose one ally within 30 feet. That ally gains +1 Guard and +1 to their next damage roll until the start of your next turn. This does not cost Stamina.</p>
+<p>At the start of each round, choose one ally within 30 feet. That ally gains +1 Guard and +1 to their next damage roll until the start of your next turn. This does not cost Rage.</p>
 </div>
 
 <!-- ASSASSIN -->
@@ -785,17 +756,17 @@ em { color: var(--ink-light); }
 <p><em>Rogue Subclass &mdash; The Silent Killer</em></p>
 <p>Assassins specialize in ending fights before they begin. Poison, ambush, and overwhelming burst damage are their tools.</p>
 
-<h4>Level 5 &mdash; Death Strike</h4>
+<h4>Level 3 &mdash; Death Strike</h4>
 <p>When you hit an Exposed or surprised enemy, you deal an additional 1d6 damage. This stacks with other Exposed bonuses.</p>
 
-<h4>Level 9 &mdash; Poison Craft</h4>
+<h4>Level 8 &mdash; Poison Craft</h4>
 <p>During a short rest, you can prepare a number of poison doses equal to your Wit modifier (minimum 1). A poisoned weapon deals +2 damage on its next hit and inflicts the Poisoned condition. Each dose lasts until used or until your next long rest.</p>
 
-<h4>Level 13 &mdash; Vanish</h4>
-<p>You can spend 2 Stamina to become hidden as a free action on your turn, even in combat, as long as you are not adjacent to an enemy. Enemies must succeed on a Sense check vs. your Stealth to target you.</p>
+<h4>Level 11 &mdash; Vanish</h4>
+<p>You can spend 2 Flow to become hidden as a free action on your turn, even in combat, as long as you are not adjacent to an enemy. Enemies must succeed on a Sense check vs. your Stealth to target you.</p>
 
 <h4>Level 17 &mdash; Assassinate</h4>
-<p>When you hit a surprised enemy, your damage dice are doubled. If this reduces the target to 0 HP, you regain 2 Stamina.</p>
+<p>When you hit a surprised enemy, your damage dice are doubled. If this reduces the target to 0 HP, you regain 2 Flow.</p>
 </div>
 
 <!-- ARCANIST -->
@@ -804,17 +775,17 @@ em { color: var(--ink-light); }
 <p><em>Mage Subclass &mdash; The Master of Raw Power</em></p>
 <p>Arcanists push the boundaries of spell construction, layering more modifiers and amplifying their effects beyond what other casters can achieve.</p>
 
-<h4>Level 5 &mdash; Arcane Surge</h4>
-<p>Once per combat, when you cast a spell, you may add one modifier at no Stamina cost.</p>
+<h4>Level 3 &mdash; Arcane Surge</h4>
+<p>Once per combat, when you cast a spell, you may add one modifier at no Focus cost.</p>
 
-<h4>Level 9 &mdash; Spell Shaping</h4>
+<h4>Level 8 &mdash; Spell Shaping</h4>
 <p>When you cast an area spell, you can exclude a number of targets equal to your Wit modifier from the effect.</p>
 
-<h4>Level 13 &mdash; Overcharge</h4>
-<p>You may spend 2 additional Stamina when casting a spell to increase all damage dice by one size (d6 becomes d8, d8 becomes d10, etc.).</p>
+<h4>Level 11 &mdash; Overcharge</h4>
+<p>You may spend 2 additional Focus when casting a spell to increase all damage dice by one size (d6 becomes d8, d8 becomes d10, etc.).</p>
 
 <h4>Level 17 &mdash; Arcane Mastery</h4>
-<p>You learn a second magical Form. You can construct spells from either Form and may even combine Base effects from both in a single spell (at +3 Stamina cost).</p>
+<p>You learn a second magical Form. You can construct spells from either Form and may even combine Base effects from both in a single spell (at +3 Focus cost).</p>
 </div>
 
 <!-- SKIRMISHER -->
@@ -823,17 +794,17 @@ em { color: var(--ink-light); }
 <p><em>Fighter / Rogue Hybrid &mdash; The Mobile Striker</em></p>
 <p>Skirmishers refuse to stand still. They weave in and out of combat, striking where defenses are weakest and never staying long enough to be pinned down.</p>
 
-<h4>Level 5 &mdash; Hit and Run</h4>
+<h4>Level 3 &mdash; Hit and Run</h4>
 <p>After you make a melee attack, you may move 5 feet without provoking reactions. This movement does not cost an action.</p>
 
-<h4>Level 9 &mdash; Exploit Momentum</h4>
+<h4>Level 8 &mdash; Exploit Momentum</h4>
 <p>If you move at least 15 feet before making an attack, you deal +2 damage on that attack.</p>
 
-<h4>Level 13 &mdash; Elusive</h4>
+<h4>Level 11 &mdash; Elusive</h4>
 <p>Attacks of opportunity against you have Minor Disadvantage. Additionally, you cannot be grappled while you have movement remaining.</p>
 
 <h4>Level 17 &mdash; Whirlwind</h4>
-<p>Once per combat, you may spend 3 Stamina to make one melee attack against every enemy you move adjacent to during your turn (maximum 4 attacks). You must move at least 5 feet between each attack.</p>
+<p>Once per combat, you may spend 3 Rage to make one melee attack against every enemy you move adjacent to during your turn (maximum 4 attacks). You must move at least 5 feet between each attack.</p>
 </div>
 
 <!-- SPELLBLADE -->
@@ -842,17 +813,17 @@ em { color: var(--ink-light); }
 <p><em>Fighter / Mage Hybrid &mdash; The Arcane Warrior</em></p>
 <p>Spellblades channel magic through their weapons, combining martial skill with arcane power into a devastating hybrid combat style.</p>
 
-<h4>Level 5 &mdash; Arcane Weapon</h4>
-<p>You can spend 1 Stamina to infuse your weapon with magical energy. Your next melee attack deals +1d6 elemental damage (choose fire, frost, or lightning when you infuse).</p>
+<h4>Level 3 &mdash; Arcane Weapon</h4>
+<p>You can spend 1 Rage to infuse your weapon with magical energy. Your next melee attack deals +1d6 elemental damage (choose your Form's element when you infuse).</p>
 
-<h4>Level 9 &mdash; Spell Strike</h4>
-<p>When you make a melee attack, you may simultaneously cast a spell with a single target, delivering it through the weapon. Both use the same hit roll. The spell costs its normal Stamina.</p>
+<h4>Level 8 &mdash; Spell Strike</h4>
+<p>When you make a melee attack, you may simultaneously cast a spell with a single target, delivering it through the weapon. Both use the same hit roll. The spell costs its normal Focus.</p>
 
-<h4>Level 13 &mdash; Arcane Shield</h4>
-<p>When you take the Block or Dodge reaction, you may spend 1 Stamina to add your Wit modifier to the roll.</p>
+<h4>Level 11 &mdash; Arcane Shield</h4>
+<p>When you take the Block or Dodge reaction, you may spend 1 Focus to add your Wit modifier to the roll.</p>
 
 <h4>Level 17 &mdash; Eldritch Fury</h4>
-<p>When you score a critical success on a melee attack, you may immediately cast a spell as a free action at half Stamina cost (rounded up).</p>
+<p>When you score a critical success on a melee attack, you may immediately cast a spell as a free action at half Focus cost (rounded up).</p>
 </div>
 
 <!-- TRICKSTER -->
@@ -861,17 +832,17 @@ em { color: var(--ink-light); }
 <p><em>Rogue / Mage Hybrid &mdash; The Master of Misdirection</em></p>
 <p>Tricksters blend illusion magic with roguish cunning, controlling the battlefield through deception, debuffs, and misdirection.</p>
 
-<h4>Level 5 &mdash; Illusory Double</h4>
-<p>You can spend 1 Stamina to create an illusory duplicate of yourself within 10 feet. The duplicate lasts until the end of your next turn or until hit. Enemies must succeed on a Sense check (TN 10 + your Wit modifier) or target the duplicate instead of you.</p>
+<h4>Level 3 &mdash; Illusory Double</h4>
+<p>You can spend 1 Flow to create an illusory duplicate of yourself within 10 feet. The duplicate lasts until the end of your next turn or until hit. Enemies must succeed on a Sense check (TN 10 + your Wit modifier) or target the duplicate instead of you.</p>
 
-<h4>Level 9 &mdash; Hexing Strike</h4>
-<p>When you hit an Exposed enemy, you may spend 1 Stamina to inflict one condition of your choice: Blinded, Frightened, or Silenced. The condition lasts until the end of your next turn.</p>
+<h4>Level 8 &mdash; Hexing Strike</h4>
+<p>When you hit an Exposed enemy, you may spend 1 Flow to inflict one condition of your choice: Blinded, Frightened, or Silenced. The condition lasts until the end of your next turn.</p>
 
-<h4>Level 13 &mdash; Misdirection</h4>
-<p>When you are targeted by an attack, you may spend 2 Stamina as a reaction to redirect the attack to another creature within 5 feet of you (ally or enemy). The attacker rerolls against the new target&#39;s Guard.</p>
+<h4>Level 11 &mdash; Misdirection</h4>
+<p>When you are targeted by an attack, you may spend 2 Flow as a reaction to redirect the attack to another creature within 5 feet of you (ally or enemy). The attacker rerolls against the new target's Guard.</p>
 
 <h4>Level 17 &mdash; Grand Illusion</h4>
-<p>Once per long rest, you can spend 4 Stamina to create a large-scale illusion (up to 30-foot cube) that affects all senses. Creatures within must pass a Wit check (TN 10 + your Wit modifier + proficiency) each turn or believe it is real. The illusion lasts up to 1 minute.</p>
+<p>Once per long rest, you can spend 4 Focus to create a large-scale illusion (up to 30-foot cube) that affects all senses. Creatures within must pass a Wit check (TN 10 + your Wit modifier + proficiency) each turn or believe it is real. The illusion lasts up to 1 minute.</p>
 </div>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
@@ -883,7 +854,7 @@ em { color: var(--ink-light); }
 
 <p>Feats are special abilities that let you customize your character beyond their class. There are two types:</p>
 <ul>
-<li><strong>Minor Feats:</strong> Small, flavorful perks for differentiation. You gain one at Level 0.</li>
+<li><strong>Minor Feats:</strong> Small, flavorful perks for differentiation. You gain two at Level 0.</li>
 <li><strong>Major Feats:</strong> Combat-defining abilities that unlock new mechanics. Gained through leveling.</li>
 </ul>
 <p>Feats are intentionally <strong>not class-specific</strong>. Your class and subclass define your core power; feats define your personal style.</p>
@@ -964,7 +935,7 @@ When wielding a single one-handed weapon and nothing in the other hand, you gain
 
 <div class="feat-entry">
 <p><span class="feat-name">Dual Wield Master</span><br>
-When dual wielding, you can take the Block action as if you had a shield. Additionally, when you take the Attack action with your main weapon, you can make a bonus attack with your off-hand weapon for 1 Stamina (deals weapon damage without stat modifier).<br>
+When dual wielding, you can take the Block action as if you had a shield. Additionally, when you take the Attack action with your main weapon, you can make a bonus attack with your off-hand weapon for 1 resource point (deals weapon damage without stat modifier).<br>
 <em>Prerequisite: Dual Wielding feat.</em></p>
 </div>
 
@@ -976,7 +947,7 @@ While wearing light armor, you gain +1 Guard. Additionally, you do not have disa
 
 <div class="feat-entry">
 <p><span class="feat-name">Medium Armor Master</span><br>
-While wearing medium armor, the maximum Reflex bonus to Guard increases by +1 (from +2 to +3). Additionally, medium armor no longer imposes disadvantage on Stealth checks.<br>
+While wearing medium armor, you gain an additional +1 Guard. Additionally, medium armor no longer imposes disadvantage on Stealth checks.<br>
 <em>Prerequisite: Medium armor proficiency.</em></p>
 </div>
 
@@ -988,7 +959,7 @@ While wearing heavy armor, you reduce all non-magical physical damage by 1 (mini
 
 <div class="feat-entry">
 <p><span class="feat-name">Slashing Master</span><br>
-When you score a critical success with a slashing weapon, the target begins Bleeding: they take 1d4 damage at the start of each of their turns for 2 rounds. When you hit with a slashing weapon, reduce the target&#39;s Guard by 1 until the end of your next turn.<br>
+When you score a critical success with a slashing weapon, the target begins Bleeding: they take 1d4 damage at the start of each of their turns for 2 rounds. When you hit with a slashing weapon, reduce the target's Guard by 1 until the end of your next turn.<br>
 <em>Prerequisite: Martial slashing proficiency.</em></p>
 </div>
 
@@ -1012,13 +983,13 @@ When you successfully block an attack, you can push the enemy back 5 feet. You g
 
 <div class="feat-entry">
 <p><span class="feat-name">Light Bow Master</span><br>
-You can fire a light bow as a single action (without needing a separate draw action). Your light bow attacks do not provoke reactions when fired within melee range.<br>
+You can fire a shortbow as a single action (without needing a separate draw action). Your shortbow attacks do not provoke reactions when fired within melee range.<br>
 <em>Prerequisite: Proficiency with ranged weapons.</em></p>
 </div>
 
 <div class="feat-entry">
 <p><span class="feat-name">Heavy Bow Master</span><br>
-You can add +2 to damage with a heavy bow (beyond the normal draw weight cap) at the cost of &minus;1 to hit. When you spend an extra action aiming, you gain Minor Advantage on the attack.<br>
+You can add +2 to damage with a longbow (beyond the normal draw weight cap) at the cost of &minus;1 to hit. When you spend an extra action aiming, you gain Minor Advantage on the attack.<br>
 <em>Prerequisite: Proficiency with ranged weapons.</em></p>
 </div>
 
@@ -1030,7 +1001,7 @@ When you score a critical success with a two-handed weapon, you may make an addi
 
 <div class="feat-entry">
 <p><span class="feat-name">Dueling Master</span><br>
-While wielding a single one-handed weapon and nothing in the other hand, you gain +1 to hit in addition to the Duelist damage bonus. When an enemy misses you with a melee attack, you may spend 1 Stamina to make an immediate counterattack as a reaction.<br>
+While wielding a single one-handed weapon and nothing in the other hand, you gain +1 to hit in addition to the Duelist damage bonus. When an enemy misses you with a melee attack, you may spend 1 resource point to make an immediate counterattack as a reaction.<br>
 <em>Prerequisite: Duelist feat.</em></p>
 </div>
 
@@ -1053,10 +1024,10 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <table>
 <thead><tr><th>Category</th><th>Examples</th><th>How You Get It</th></tr></thead>
 <tbody>
-<tr><td><strong>Weapons</strong></td><td>Simple weapons, martial slashing, finesse, bows</td><td>Class, feats</td></tr>
+<tr><td><strong>Weapons</strong></td><td>Simple weapons, martial slashing, finesse, bows</td><td>Class, feats, background</td></tr>
 <tr><td><strong>Armor</strong></td><td>Light, medium, heavy armor, shields</td><td>Class, feats</td></tr>
 <tr><td><strong>Skills</strong></td><td>Athletics, Stealth, Perception, etc.</td><td>Background, race, class</td></tr>
-<tr><td><strong>Tools</strong></td><td>Lockpicks, healer&#39;s kit, artisan tools</td><td>Background, feats</td></tr>
+<tr><td><strong>Tools</strong></td><td>Lockpicks, healer's kit, artisan tools</td><td>Background, feats</td></tr>
 </tbody>
 </table>
 
@@ -1110,35 +1081,42 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <h1><span class="chapter-num">Chapter X</span>Equipment</h1>
 
 <h2>Melee Weapons</h2>
-<h3>Simple Melee Weapons</h3>
+
+<h3>Piercing Weapons</h3>
 <table>
-<thead><tr><th>Weapon</th><th>Damage</th><th>Type</th><th>Properties</th></tr></thead>
+<thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
-<tr><td>Dagger</td><td>1d4</td><td>Piercing</td><td>Light, Finesse, Thrown (20 ft)</td></tr>
-<tr><td>Club</td><td>1d4</td><td>Bludgeoning</td><td>Light</td></tr>
-<tr><td>Handaxe</td><td>1d6</td><td>Slashing</td><td>Light, Thrown (20 ft)</td></tr>
-<tr><td>Spear</td><td>1d6</td><td>Piercing</td><td>Thrown (30 ft), Versatile (1d8)</td></tr>
-<tr><td>Quarterstaff</td><td>1d6</td><td>Bludgeoning</td><td>Versatile (1d8)</td></tr>
-<tr><td>Mace</td><td>1d6</td><td>Bludgeoning</td><td>&mdash;</td></tr>
+<tr><td>Dagger</td><td>1d4</td><td>Finesse, Light, Thrown (20/60)</td></tr>
+<tr><td>Rapier</td><td>1d6</td><td>Finesse, Light</td></tr>
+<tr><td>War Pick</td><td>1d8</td><td>&mdash;</td></tr>
+<tr><td>Spear</td><td>1d6</td><td>Thrown (20/60), Versatile (1d8)</td></tr>
+<tr><td>Pike</td><td>1d8</td><td>Heavy, Reach, Two-Handed</td></tr>
 </tbody>
 </table>
 
-<h3>Martial Melee Weapons</h3>
+<h3>Slashing Weapons</h3>
 <table>
-<thead><tr><th>Weapon</th><th>Damage</th><th>Type</th><th>Properties</th></tr></thead>
+<thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
-<tr><td>Shortsword</td><td>1d6</td><td>Piercing</td><td>Light, Finesse</td></tr>
-<tr><td>Longsword</td><td>1d8</td><td>Slashing</td><td>Versatile (1d10)</td></tr>
-<tr><td>Rapier</td><td>1d8</td><td>Piercing</td><td>Finesse</td></tr>
-<tr><td>Battleaxe</td><td>1d8</td><td>Slashing</td><td>Versatile (1d10)</td></tr>
-<tr><td>Warhammer</td><td>1d8</td><td>Bludgeoning</td><td>Versatile (1d10)</td></tr>
-<tr><td>Flail</td><td>1d8</td><td>Bludgeoning</td><td>&mdash;</td></tr>
-<tr><td>Greatsword</td><td>2d6</td><td>Slashing</td><td>Heavy, Two-Handed</td></tr>
-<tr><td>Greataxe</td><td>1d12</td><td>Slashing</td><td>Heavy, Two-Handed</td></tr>
-<tr><td>Maul</td><td>2d6</td><td>Bludgeoning</td><td>Heavy, Two-Handed</td></tr>
-<tr><td>Halberd</td><td>1d10</td><td>Slashing</td><td>Heavy, Two-Handed, Reach</td></tr>
-<tr><td>Pike</td><td>1d10</td><td>Piercing</td><td>Heavy, Two-Handed, Reach</td></tr>
-<tr><td>Whip</td><td>1d4</td><td>Slashing</td><td>Finesse, Reach</td></tr>
+<tr><td>Scimitar</td><td>1d6</td><td>Finesse, Light</td></tr>
+<tr><td>Longsword</td><td>1d8</td><td>Versatile (1d10)</td></tr>
+<tr><td>Battleaxe</td><td>1d8</td><td>Versatile (1d10), Thrown (10/20)</td></tr>
+<tr><td>Greatsword</td><td>2d6</td><td>Heavy, Two-Handed</td></tr>
+<tr><td>Halberd</td><td>1d8</td><td>Heavy, Reach, Two-Handed</td></tr>
+<tr><td>Greataxe</td><td>1d12</td><td>Heavy, Two-Handed</td></tr>
+</tbody>
+</table>
+
+<h3>Bludgeoning Weapons</h3>
+<table>
+<thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
+<tbody>
+<tr><td>Club</td><td>1d6</td><td>Light</td></tr>
+<tr><td>Light Hammer</td><td>1d4</td><td>Light, Thrown (15/40)</td></tr>
+<tr><td>Warhammer</td><td>1d8</td><td>Versatile (1d10)</td></tr>
+<tr><td>Mace</td><td>1d8</td><td>&mdash;</td></tr>
+<tr><td>Quarterstaff</td><td>1d6</td><td>Versatile (1d8)</td></tr>
+<tr><td>Maul</td><td>1d12</td><td>Heavy, Two-Handed</td></tr>
 </tbody>
 </table>
 
@@ -1152,58 +1130,46 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <tr><td><strong>Reach</strong></td><td>Melee range is 10 feet instead of 5 feet</td></tr>
 <tr><td><strong>Two-Handed</strong></td><td>Requires both hands to wield</td></tr>
 <tr><td><strong>Versatile (Xd)</strong></td><td>Can be used one-handed or two-handed. Two-handed uses the listed damage die</td></tr>
-<tr><td><strong>Thrown (X ft)</strong></td><td>Can be thrown for a ranged attack up to the listed range</td></tr>
+<tr><td><strong>Thrown (X/Y)</strong></td><td>Can be thrown for a ranged attack. First number is normal range, second is long range</td></tr>
 </tbody>
 </table>
 
 <h2>Ranged Weapons</h2>
 <table>
-<thead><tr><th>Weapon</th><th>Damage</th><th>Range</th><th>Draw Weight</th><th>Properties</th></tr></thead>
+<thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
-<tr><td>Light Bow</td><td>1d6</td><td>80 ft / 160 ft</td><td>2</td><td>Two-Handed, Ammunition</td></tr>
-<tr><td>Heavy Bow</td><td>1d8</td><td>120 ft / 240 ft</td><td>4</td><td>Two-Handed, Heavy, Ammunition</td></tr>
-<tr><td>Light Crossbow</td><td>1d6</td><td>60 ft / 120 ft</td><td>&mdash;</td><td>Two-Handed, Ammunition, Loading</td></tr>
-<tr><td>Sling</td><td>1d4</td><td>40 ft / 80 ft</td><td>&mdash;</td><td>Ammunition</td></tr>
+<tr><td>Shortbow</td><td>1d8 piercing</td><td>Can move 10 ft before/after loading; can move while drawn</td></tr>
+<tr><td>Longbow</td><td>1d10 piercing</td><td>Cannot move while drawn</td></tr>
+<tr><td>Crossbow</td><td>1d12 piercing</td><td>Takes two turns to load; can be stored loaded</td></tr>
 </tbody>
 </table>
 
 <div class="callout">
 <div class="callout-title">Bow Mechanics</div>
-<p>Bows use <strong>Sense</strong> for accuracy (to-hit) and <strong>Might</strong> for damage, but your Might bonus to damage is <strong>capped by the bow&#39;s Draw Weight</strong>.</p>
+<p>Bows use <strong>Sense</strong> for accuracy (to-hit) and <strong>Might</strong> for damage, but your Might bonus to damage is <strong>capped by the bow's Draw Weight</strong>.</p>
 <ul>
-<li>A player with +4 Might using a Draw Weight 2 bow adds only +2 bonus damage.</li>
-<li>A player with +1 Might using a Draw Weight 4 bow adds only +1 bonus damage.</li>
+<li>A player with high Might using a low Draw Weight bow adds only limited bonus damage.</li>
+<li>A player with low Might using a high Draw Weight bow adds only what their Might allows.</li>
 </ul>
 <p>Bows take <strong>1 action to draw</strong> and <strong>1 action to fire</strong>. Drawing a bow within the reach of an enemy triggers a reaction opportunity against you (unless you have the Close-Quarter Marksman feat).</p>
-<p><strong>Range:</strong> The first number is normal range; the second is long range. Attacks at long range have Minor Disadvantage.</p>
+<p><strong>Range:</strong> Attacks at long range have Minor Disadvantage.</p>
 </div>
 
 <h2>Armor</h2>
 <table>
-<thead><tr><th>Armor</th><th>Guard Bonus</th><th>Category</th><th>Penalties</th></tr></thead>
+<thead><tr><th>Armor</th><th>Proficient</th><th>Non-Proficient</th></tr></thead>
 <tbody>
-<tr><td>Padded</td><td>+1</td><td>Light</td><td>None</td></tr>
-<tr><td>Leather</td><td>+2</td><td>Light</td><td>None</td></tr>
-<tr><td>Studded Leather</td><td>+3</td><td>Light</td><td>None</td></tr>
-<tr><td>Hide</td><td>+3</td><td>Medium</td><td>Minor Disadvantage on Stealth</td></tr>
-<tr><td>Chain Shirt</td><td>+4</td><td>Medium</td><td>Minor Disadvantage on Stealth</td></tr>
-<tr><td>Breastplate</td><td>+5</td><td>Medium</td><td>Minor Disadvantage on Stealth</td></tr>
-<tr><td>Chain Mail</td><td>+6</td><td>Heavy</td><td>Disadvantage on Stealth, &minus;5 ft movement</td></tr>
-<tr><td>Splint</td><td>+7</td><td>Heavy</td><td>Disadvantage on Stealth, &minus;5 ft movement</td></tr>
-<tr><td>Plate</td><td>+8</td><td>Heavy</td><td>Disadvantage on Stealth, &minus;10 ft movement</td></tr>
-<tr><td>Shield</td><td>+1</td><td>Shield</td><td>Occupies one hand</td></tr>
+<tr><td><strong>Light</strong></td><td>+1 Guard</td><td>&minus;1 Dodge, Minor Disadv. Stealth, Minor Disadv. Athletics, +1 Guard</td></tr>
+<tr><td><strong>Medium</strong></td><td>+2 Guard, Minor Disadv. Stealth</td><td>&minus;1 Dodge, Minor Disadv. Stealth, Major Disadv. Athletics, +1 Guard</td></tr>
+<tr><td><strong>Heavy</strong></td><td>+3 Guard, Minor Disadv. Stealth, Minor Disadv. Athletics</td><td>&minus;1 Dodge, &minus;5 ft movement, Major Disadv. Stealth, Major Disadv. Athletics, +2 Guard</td></tr>
+<tr><td><strong>Shield</strong></td><td>+1 Guard</td><td>Occupies one hand, no Guard bonus</td></tr>
 </tbody>
 </table>
 
 <div class="callout">
 <div class="callout-title">Guard Calculation</div>
-<p><strong>Guard = 8 + Armor Bonus + Reflex Modifier (limited by armor type)</strong></p>
-<ul>
-<li><strong>Light Armor:</strong> Full Reflex modifier</li>
-<li><strong>Medium Armor:</strong> Reflex modifier capped at +2</li>
-<li><strong>Heavy Armor:</strong> No Reflex modifier</li>
-<li><strong>No Armor:</strong> Guard = 8 + full Reflex modifier</li>
-</ul>
+<p><strong>Guard = 8 + Armor Bonus + Reflex Modifier</strong></p>
+<p>The three-tier armor system is streamlined: Light gives +1, Medium gives +2, Heavy gives +3. No per-type Reflex caps&mdash;the penalties for heavier armor already discourage mismatched builds.</p>
 </div>
 
 <h2>Adventuring Gear</h2>
@@ -1214,7 +1180,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <tr><td>Torch</td><td>Provides bright light in a 20 ft radius, dim light for 20 ft beyond.</td></tr>
 <tr><td>Rations (1 day)</td><td>Dried food sufficient for one day.</td></tr>
 <tr><td>Waterskin</td><td>Holds water for one day.</td></tr>
-<tr><td>Healer&#39;s Kit</td><td>10 uses. Grants Minor Advantage on stabilization checks.</td></tr>
+<tr><td>Healer's Kit</td><td>10 uses. Grants Minor Advantage on stabilization checks.</td></tr>
 <tr><td>Lockpicks</td><td>Required for picking locks. Proficiency needed for +2 bonus.</td></tr>
 <tr><td>Grappling Hook</td><td>Can be attached to rope. Thrown up to 30 ft.</td></tr>
 <tr><td>Lantern</td><td>Bright light 30 ft, dim 30 ft beyond. Burns oil.</td></tr>
@@ -1233,7 +1199,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <h2>The Core Roll</h2>
 <div class="rule-box">
 <div class="callout-title">Attack Roll</div>
-<p>Roll <strong>3d6 + Stat Modifier + Proficiency</strong> vs. target&#39;s <strong>Guard</strong>.</p>
+<p>Roll <strong>3d6 + Stat Modifier + Proficiency</strong> vs. target's <strong>Guard</strong>.</p>
 <p>Meet or exceed Guard = hit.</p>
 </div>
 
@@ -1290,7 +1256,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <tr><td><strong>Dodge</strong></td><td>Add Reflex modifier to your Guard against this attack</td><td>1 Action</td></tr>
 <tr><td><strong>Block</strong></td><td>If hit, reduce damage by your Block value (shield or weapon-based)</td><td>1 Action</td></tr>
 <tr><td><strong>Parry/Counter</strong></td><td>Class or weapon-specific. May allow a counterattack or impose penalties.</td><td>1 Action</td></tr>
-<tr><td><strong>Reaction Spell</strong></td><td>Cast a defensive spell (if available and prepared).</td><td>1 Action + Stamina</td></tr>
+<tr><td><strong>Reaction Spell</strong></td><td>Cast a defensive spell (if available and prepared).</td><td>1 Action + Focus</td></tr>
 </tbody>
 </table>
 
@@ -1305,13 +1271,13 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <ul>
 <li>Combat takes place on a <strong>5-foot battle grid</strong>.</li>
 <li>Standard movement speed is <strong>30 feet</strong> per action spent on movement.</li>
-<li>Moving out of a creature&#39;s melee reach provokes a <strong>reaction opportunity</strong> from that creature.</li>
+<li>Moving out of a creature's melee reach provokes a <strong>reaction opportunity</strong> from that creature.</li>
 <li>Difficult terrain costs double movement (10 feet per 5 feet traversed).</li>
 </ul>
 
 <h2>Flanking</h2>
 <div class="rule-box">
-<p>When you and an ally are on <strong>opposite sides</strong> of an enemy (forming a line through the enemy&#39;s space), you both gain <strong>+1 to hit</strong> that enemy.</p>
+<p>When you and an ally are on <strong>opposite sides</strong> of an enemy (forming a line through the enemy's space), you both gain <strong>+1 to hit</strong> that enemy.</p>
 </div>
 
 <h2>Surprise Rounds</h2>
@@ -1334,176 +1300,150 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter mage-section" id="ch12">
 <h1><span class="chapter-num">Chapter XII</span>Magic System</h1>
 
-<p>Magic in this system is built on <strong>spell construction</strong>. Rather than memorizing a fixed list of spells, Mages choose a magical <strong>Form</strong> (school of magic) and learn to construct spells by combining <strong>Base effects</strong> with <strong>Modifiers</strong>. Every spell costs Stamina, and more powerful combinations cost more.</p>
+<p>Magic in this system is built on <strong>spell construction</strong>. Rather than memorizing a fixed list of spells, Mages choose a magical <strong>Form</strong> (elemental school) and learn to construct spells by combining <strong>Base effects</strong> with <strong>Modifiers</strong>. Every spell costs Focus, and more powerful combinations cost more.</p>
 
 <h2>How Spell Construction Works</h2>
 <ol>
-<li><strong>Choose a Base effect</strong> from your Form. This is the spell&#39;s core function.</li>
-<li><strong>Add Modifiers</strong> (optional). Each modifier enhances or changes the spell, but costs additional Stamina.</li>
-<li><strong>Pay the Stamina cost</strong> (Base cost + Modifier costs).</li>
-<li><strong>Roll to cast:</strong> 3d6 + Wit Modifier + Proficiency vs. Target Number (for attack spells, vs. target&#39;s Guard).</li>
+<li><strong>Choose a Base effect</strong> from your Form. This is the spell's core function (Target or Zone).</li>
+<li><strong>Add Modifiers</strong> (optional). Each modifier enhances or changes the spell, but costs additional Focus.</li>
+<li><strong>Pay the Focus cost</strong> (Base cost + Modifier costs).</li>
+<li><strong>Roll to cast:</strong> 3d6 + Wit Modifier + Proficiency vs. Target Number (for attack spells, vs. target's Guard).</li>
 </ol>
 
 <div class="rule-box">
 <div class="callout-title">Spell Construction Cost</div>
-<p><strong>Total Stamina Cost = Base Cost + Modifier 1 Cost + Modifier 2 Cost + ...</strong></p>
+<p><strong>Total Focus Cost = Base Cost + Modifier 1 Cost + Modifier 2 Cost + ...</strong></p>
 <p>Players can only learn spells from their chosen Form. Some spells can be cast as Reactions. Mage discipline features can reduce modifier costs.</p>
 </div>
 
-<h2>The Six Forms</h2>
+<h2>The Five Elemental Forms</h2>
+<p>Mages choose one elemental Form at character creation. Each Form flavors the spell's element but uses the same two Base effects. The real variety comes from the 23 Modifiers, organized by resource and element.</p>
 
-<div class="spell-form">
-<h3>Destruction</h3>
-<p><em>The art of dealing damage through elemental and arcane force.</em></p>
-<h4>Base Effects</h4>
+<div class="callout">
+<div class="callout-title">The Forms</div>
+<table>
+<thead><tr><th>Form</th><th>Element</th></tr></thead>
+<tbody>
+<tr><td><strong>Fire</strong></td><td>Flame, heat, combustion</td></tr>
+<tr><td><strong>Water</strong></td><td>Ice, cold, liquid, mist</td></tr>
+<tr><td><strong>Earth</strong></td><td>Stone, metal, sand, terrain</td></tr>
+<tr><td><strong>Air</strong></td><td>Wind, pressure, lightning-adjacent</td></tr>
+<tr><td><strong>Lightning</strong></td><td>Electricity, energy, disruption</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Base Effects</h2>
+<p>All Forms share the same two Base effects. The element of the spell is determined by your chosen Form.</p>
 <table>
 <thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Bolt</td><td>1</td><td>Ranged attack, 60 ft. Deals 1d6 + Wit damage to a single target.</td></tr>
-<tr><td>Burst</td><td>2</td><td>10-ft radius at a point within 60 ft. Each creature rolls Reflex vs. your spell TN; fail = 1d6 damage.</td></tr>
-<tr><td>Arc</td><td>2</td><td>15-ft cone from caster. Each creature in area: 1d6 damage, Reflex save for half.</td></tr>
-<tr><td>Ray</td><td>2</td><td>Concentrated beam, 30 ft line. Deals 2d6 damage to the first target hit.</td></tr>
-<tr><td>Detonate</td><td>3</td><td>Touch range. Deals 3d6 damage to one target. On critical success, nearby creatures take 1d6 splash.</td></tr>
+<tr><td><strong>Target</strong></td><td>1</td><td>Fire a magic shot toward a declared target. Ranged attack, standard range.</td></tr>
+<tr><td><strong>Zone</strong></td><td>2</td><td>Create an effect in a specified 15 ft cube. Affects all creatures in the area.</td></tr>
 </tbody>
 </table>
-<h4>Modifiers</h4>
+
+<h2>Modifiers</h2>
+<p>There are 23 Modifiers organized into two categories: <strong>Resource-Tied</strong> (linked to your class resource) and <strong>Element-Tied</strong> (linked to your chosen Form).</p>
+
+<h3>Resource-Tied Modifiers</h3>
+<p>These modifiers are available based on your class resource. Multi-class hybrids (Spellblade, Trickster) may access modifiers from both their resource pools.</p>
+
+<div class="spell-form">
+<h3>Flow Modifiers (Rogue Resource)</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Empower</td><td>+1</td><td>Increase all damage dice by one size (d6 &#8594; d8).</td></tr>
-<tr><td>Widen</td><td>+1</td><td>Increase area of effect by 5 feet.</td></tr>
-<tr><td>Chain</td><td>+2</td><td>On hit, the spell arcs to one additional target within 10 ft for half damage.</td></tr>
-<tr><td>Ignite</td><td>+1</td><td>Target catches fire: Burning condition (1d4 fire at start of their turn, 2 rounds).</td></tr>
+<tr><td><strong>Cascade</strong></td><td>+1</td><td>Spell arcs to one additional target within range.</td></tr>
+<tr><td><strong>Slipstream</strong></td><td>+1</td><td>After casting, you may move 10 ft without provoking reactions.</td></tr>
+<tr><td><strong>Refund</strong></td><td>+1</td><td>If the spell hits 2 or more targets, regain 1 resource point.</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="spell-form">
-<h3>Protection</h3>
-<p><em>Defensive magic that shields allies and controls space.</em></p>
-<h4>Base Effects</h4>
-<table>
-<thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
-<tbody>
-<tr><td>Ward</td><td>1</td><td>Touch. Target gains +2 Guard until end of their next turn.</td></tr>
-<tr><td>Barrier</td><td>2</td><td>Create a 10-ft wall of force within 30 ft. Lasts 1 minute. Blocks movement and projectiles. HP: 10.</td></tr>
-<tr><td>Shield</td><td>1</td><td>Reaction spell. When you or an adjacent ally is hit, gain +2 Guard against that attack.</td></tr>
-<tr><td>Absorb</td><td>2</td><td>Touch. Target gains resistance to one damage type (half damage) for 3 rounds.</td></tr>
-<tr><td>Sanctuary</td><td>3</td><td>20-ft radius centered on you. Allies within gain +1 Guard for 1 minute. Concentration.</td></tr>
-</tbody>
-</table>
-<h4>Modifiers</h4>
+<h3>Focus Modifiers (Mage Resource)</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Extend</td><td>+1</td><td>Double the duration of the spell.</td></tr>
-<tr><td>Fortify</td><td>+1</td><td>Increase Guard bonus by +1.</td></tr>
-<tr><td>Reflect</td><td>+2</td><td>When the ward/shield blocks an attack, deal 1d4 damage back to the attacker.</td></tr>
-<tr><td>Expand</td><td>+1</td><td>Increase the spell&#39;s range by 15 ft or area by 5 ft.</td></tr>
+<tr><td><strong>Pinpoint</strong></td><td>+1</td><td>Spell ignores cover and resistance.</td></tr>
+<tr><td><strong>Delay</strong></td><td>+1</td><td>Spell resolves at the start of your next turn with increased potency (+1 damage die).</td></tr>
+<tr><td><strong>Selective</strong></td><td>+1</td><td>You choose which targets in an area are affected.</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="spell-form">
-<h3>Restoration</h3>
-<p><em>Healing and purification magic.</em></p>
-<h4>Base Effects</h4>
-<table>
-<thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
-<tbody>
-<tr><td>Mend</td><td>1</td><td>Touch. Heal 1d6 + Wit modifier HP.</td></tr>
-<tr><td>Purify</td><td>1</td><td>Touch. Remove one condition (Poisoned, Blinded, etc.).</td></tr>
-<tr><td>Revitalize</td><td>2</td><td>Touch. Target regains 2d6 HP and gains +1 to their next saving throw.</td></tr>
-<tr><td>Mass Mend</td><td>3</td><td>All allies within 15 ft heal 1d6 HP.</td></tr>
-<tr><td>Resurrection Pulse</td><td>4</td><td>Touch. Stabilize a dying creature and restore them to 1 HP. They regain consciousness.</td></tr>
-</tbody>
-</table>
-<h4>Modifiers</h4>
+<h3>Rage Modifiers (Fighter Resource)</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Empower</td><td>+1</td><td>Increase healing dice by one size (d6 &#8594; d8).</td></tr>
-<tr><td>Range</td><td>+1</td><td>Increase range from Touch to 30 ft.</td></tr>
-<tr><td>Sustained</td><td>+1</td><td>Target heals an additional 1d4 at the start of their next turn.</td></tr>
-<tr><td>Cleansing</td><td>+1</td><td>Also remove one condition when healing.</td></tr>
+<tr><td><strong>Overdrive</strong></td><td>+1</td><td>Increased potency (+1 damage die), but you suffer a drawback (Minor Disadvantage on next defense roll).</td></tr>
+<tr><td><strong>Bloodcast</strong></td><td>+0</td><td>Pay HP instead of resource to cast the spell. Cost = Focus cost &times; 2 in HP.</td></tr>
+<tr><td><strong>Blood Cost</strong></td><td>+0</td><td>Pay HP to ignore spell limits (e.g., casting when at 0 resource). Cost determined by GM.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Element-Tied Modifiers</h3>
+<p>These modifiers are available only to Mages who have chosen the corresponding elemental Form.</p>
+
+<div class="spell-form">
+<h3>Fire Modifiers</h3>
+<table>
+<thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td><strong>Burn</strong></td><td>+1</td><td>Target takes ongoing fire damage (1d4 at start of their turn, 2 rounds).</td></tr>
+<tr><td><strong>Scorch</strong></td><td>+1</td><td>Reduce target's Guard by 1 until end of their next turn.</td></tr>
+<tr><td><strong>Spread</strong></td><td>+1</td><td>Create a 5 ft area of burning ground that lasts 2 rounds. Creatures entering take 1d4 fire damage.</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="spell-form">
-<h3>Alteration</h3>
-<p><em>Magic that changes the physical world&mdash;shapes, sizes, materials.</em></p>
-<h4>Base Effects</h4>
-<table>
-<thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
-<tbody>
-<tr><td>Reshape</td><td>1</td><td>Alter up to 5 cubic feet of non-living material (stone, wood, metal) into a new shape. Lasts 10 minutes.</td></tr>
-<tr><td>Enlarge/Reduce</td><td>2</td><td>Touch. Target creature doubles or halves in size for 3 rounds. Enlarged: +2 Might, +1d4 damage. Reduced: +2 Reflex, Minor Advantage on Stealth.</td></tr>
-<tr><td>Transmute</td><td>2</td><td>Change the material of a small object (up to 1 cubic foot) for 10 minutes. Stone to iron, wood to glass, etc.</td></tr>
-<tr><td>Haste</td><td>3</td><td>Touch. Target gains +1 action on their next turn and +10 ft movement for 2 rounds.</td></tr>
-<tr><td>Slow</td><td>2</td><td>One creature within 30 ft. Target loses 1 action on their next turn. Wit save (TN 10 + your Wit modifier) negates.</td></tr>
-</tbody>
-</table>
-<h4>Modifiers</h4>
+<h3>Water Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Extend</td><td>+1</td><td>Double duration.</td></tr>
-<tr><td>Multi-Target</td><td>+2</td><td>Affect one additional creature.</td></tr>
-<tr><td>Permanence</td><td>+3</td><td>Material reshaping becomes permanent (Reshape/Transmute only).</td></tr>
-<tr><td>Subtle</td><td>+1</td><td>The spell has no visible or audible indicators.</td></tr>
+<tr><td><strong>Chill</strong></td><td>+1</td><td>Reduce target's speed by 10 ft and delay their next action by 1 in initiative order.</td></tr>
+<tr><td><strong>Splash</strong></td><td>+1</td><td>Spell effect spills to all spaces adjacent to the primary target.</td></tr>
+<tr><td><strong>Bubble</strong></td><td>+1</td><td>Allies in the area can block one instance of damage, but cannot dodge until end of next turn.</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="spell-form">
-<h3>Divination</h3>
-<p><em>Magic of knowledge, detection, and foresight.</em></p>
-<h4>Base Effects</h4>
-<table>
-<thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
-<tbody>
-<tr><td>Detect</td><td>1</td><td>Sense the presence of a chosen type (magic, traps, creatures, poison) within 30 ft for 1 minute.</td></tr>
-<tr><td>Identify</td><td>1</td><td>Touch. Learn the properties of a magical item or the nature of a spell effect.</td></tr>
-<tr><td>Foresight</td><td>2</td><td>Touch. Target gains +1 to Guard and saving throws for 3 rounds. They cannot be surprised.</td></tr>
-<tr><td>Scry</td><td>3</td><td>See and hear a known location or creature for 1 minute. Range: 1 mile. Requires concentration.</td></tr>
-<tr><td>True Sight</td><td>3</td><td>Touch. Target sees through illusions, invisibility, and magical darkness for 1 minute.</td></tr>
-</tbody>
-</table>
-<h4>Modifiers</h4>
+<h3>Air Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Extend</td><td>+1</td><td>Double the duration.</td></tr>
-<tr><td>Broaden</td><td>+1</td><td>Detect/Scry range increases to 60 ft / 5 miles.</td></tr>
-<tr><td>Share</td><td>+1</td><td>One additional creature gains the benefit of the spell.</td></tr>
-<tr><td>Clarity</td><td>+1</td><td>Gain specific details instead of general impressions (exact number, precise location, etc.).</td></tr>
+<tr><td><strong>Push</strong></td><td>+1</td><td>Force the target to move 10 ft in a direction of your choice.</td></tr>
+<tr><td><strong>Lift</strong></td><td>+1</td><td>Remove stable footing from target; they have Minor Disadvantage on their next attack and cannot take reactions until they land.</td></tr>
+<tr><td><strong>Lighten</strong></td><td>+1</td><td>Allies in the area gain +10 ft movement speed and +1 to Dodge rolls until end of next turn.</td></tr>
 </tbody>
 </table>
 </div>
 
 <div class="spell-form">
-<h3>Illusion</h3>
-<p><em>Magic of deception, misdirection, and phantom creations.</em></p>
-<h4>Base Effects</h4>
-<table>
-<thead><tr><th>Base</th><th>Cost</th><th>Effect</th></tr></thead>
-<tbody>
-<tr><td>Phantom Image</td><td>1</td><td>Create a visual illusion up to 5 ft in size within 30 ft. Lasts 1 minute or until touched.</td></tr>
-<tr><td>Disguise</td><td>1</td><td>Change your appearance for 10 minutes. Does not hold up to physical inspection.</td></tr>
-<tr><td>Invisibility</td><td>3</td><td>Touch. Target becomes invisible for 1 minute or until they attack or cast a spell.</td></tr>
-<tr><td>Mirror Doubles</td><td>2</td><td>Create 2 illusory copies of yourself. Each copy absorbs one attack before vanishing. Lasts 3 rounds.</td></tr>
-<tr><td>Phantom Terror</td><td>2</td><td>One creature within 30 ft sees its worst fear. Target must make a Wit save (TN 10 + your Wit modifier) or become Frightened for 2 rounds.</td></tr>
-</tbody>
-</table>
-<h4>Modifiers</h4>
+<h3>Earth Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td>Sound</td><td>+1</td><td>The illusion produces convincing sound.</td></tr>
-<tr><td>Tangible</td><td>+2</td><td>The illusion feels real to the touch (still deals no damage).</td></tr>
-<tr><td>Extend</td><td>+1</td><td>Double the duration.</td></tr>
-<tr><td>Multi-Image</td><td>+1</td><td>Create one additional copy (Mirror Doubles) or increase illusion size by 5 ft.</td></tr>
+<tr><td><strong>Anchor</strong></td><td>+1</td><td>Target cannot be forcibly moved (Push, Shove, knockback) until end of their next turn.</td></tr>
+<tr><td><strong>Sink Hole</strong></td><td>+1</td><td>Collapse ground in target area. Movement through the area costs triple. Creatures in the area must make a Reflex save or fall Prone.</td></tr>
+<tr><td><strong>Crumble</strong></td><td>+1</td><td>Weaken structures or armor. Target's Guard is reduced by 2 until end of their next turn, or a structure takes 2d6 damage.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="spell-form">
+<h3>Lightning Modifiers</h3>
+<table>
+<thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td><strong>Shock</strong></td><td>+1</td><td>Interrupt the target's current action. They have Minor Disadvantage on their next roll.</td></tr>
+<tr><td><strong>Conduct</strong></td><td>+1</td><td>Spell effects jump to one nearby target (within 10 ft of original target) for half effect.</td></tr>
+<tr><td><strong>Disrupt</strong></td><td>+1</td><td>Drain 1 resource point from the target or break their concentration on an active spell.</td></tr>
 </tbody>
 </table>
 </div>
@@ -1520,15 +1460,15 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <table>
 <thead><tr><th>Condition</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td><strong>Exposed</strong></td><td>The creature has dropped its guard. Attacks against it deal <strong>+2 bonus damage</strong>. Ends at the start of the creature&#39;s next turn (unless reapplied).</td></tr>
+<tr><td><strong>Exposed</strong></td><td>The creature has dropped its guard. Attacks against it deal <strong>+2 bonus damage</strong>. Ends at the start of the creature's next turn (unless reapplied).</td></tr>
 <tr><td><strong>Prone</strong></td><td>The creature is on the ground. Melee attacks against it gain +1 to hit. Ranged attacks against it have &minus;1 to hit. Standing costs 15 ft of movement.</td></tr>
-<tr><td><strong>Grappled</strong></td><td>The creature&#39;s speed is 0. It cannot move away from the grappler. It can still attack and take actions normally. Escape requires a contested Might or Reflex check.</td></tr>
+<tr><td><strong>Grappled</strong></td><td>The creature's speed is 0. It cannot move away from the grappler. It can still attack and take actions normally. Escape requires a contested Might or Reflex check.</td></tr>
 <tr><td><strong>Stunned</strong></td><td>The creature loses 1 action on its next turn. It cannot take reactions. Attacks against it have Minor Advantage.</td></tr>
 <tr><td><strong>Blinded</strong></td><td>The creature cannot see. Attacks it makes have Minor Disadvantage. Attacks against it have Minor Advantage. It automatically fails any check requiring sight.</td></tr>
 <tr><td><strong>Frightened</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks while the source of fear is within line of sight. It cannot willingly move closer to the source.</td></tr>
 <tr><td><strong>Poisoned</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks. At the start of each of its turns, it takes 1d4 poison damage. Lasts 3 rounds or until cured.</td></tr>
 <tr><td><strong>Burning</strong></td><td>The creature is on fire. At the start of each of its turns, it takes 1d4 fire damage. It can spend 1 action to extinguish the flames. Lasts until extinguished or 2 rounds.</td></tr>
-<tr><td><strong>Frozen</strong></td><td>The creature&#39;s speed is halved. It has Minor Disadvantage on Reflex-based checks and saves. Lasts 2 rounds.</td></tr>
+<tr><td><strong>Frozen</strong></td><td>The creature's speed is halved. It has Minor Disadvantage on Reflex-based checks and saves. Lasts 2 rounds.</td></tr>
 <tr><td><strong>Silenced</strong></td><td>The creature cannot speak or cast spells with verbal components. It cannot communicate verbally. Lasts until the effect ends.</td></tr>
 </tbody>
 </table>
@@ -1541,15 +1481,29 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <h1><span class="chapter-num">Chapter XIV</span>Health, Death &amp; Recovery</h1>
 
 <h2>Hit Points</h2>
-<p>Your HP is determined by your class and Vigor modifier:</p>
+<p>Your starting HP is determined by your <strong>race's base HP</strong>. At Level 1 and beyond, you gain additional HP per level based on your class:</p>
 <table>
 <thead><tr><th>Class</th><th>HP per Level</th></tr></thead>
 <tbody>
-<tr><td>Fighter</td><td>10 + Vigor modifier</td></tr>
-<tr><td>Rogue</td><td>8 + Vigor modifier</td></tr>
-<tr><td>Mage</td><td>6 + Vigor modifier</td></tr>
+<tr><td>Fighter</td><td>Base HP (from race) + Vigor modifier per level</td></tr>
+<tr><td>Rogue</td><td>Base HP (from race) + Vigor modifier per level</td></tr>
+<tr><td>Mage</td><td>Base HP (from race) + Vigor modifier per level</td></tr>
 </tbody>
 </table>
+
+<div class="callout">
+<div class="callout-title">Race Base HP</div>
+<table>
+<thead><tr><th>Race</th><th>Base HP</th></tr></thead>
+<tbody>
+<tr><td>Stoneskin</td><td>12</td></tr>
+<tr><td>Ironblood</td><td>11</td></tr>
+<tr><td>Lightfoot</td><td>10</td></tr>
+<tr><td>Quickmind</td><td>10</td></tr>
+<tr><td>Keen-eye</td><td>9</td></tr>
+</tbody>
+</table>
+</div>
 
 <h2>Flinch</h2>
 <p>Massive hits can stagger even the toughest warriors.</p>
@@ -1576,7 +1530,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <ul>
 <li>Anyone can attempt to stabilize a downed creature by spending <strong>2 Actions</strong>.</li>
 <li>Roll <strong>3d6 + Proficiency</strong> vs. <strong>TN 12</strong>.</li>
-<li>Relevant proficiencies (Medicine, Healer&#39;s Kit) grant <strong>Minor Advantage</strong>.</li>
+<li>Relevant proficiencies (Medicine, Healer's Kit) grant <strong>Minor Advantage</strong>.</li>
 <li>On success: the creature stabilizes at 0 HP and stops losing HP. They remain unconscious.</li>
 </ul>
 
@@ -1594,14 +1548,16 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <p>A short rest takes approximately <strong>1 hour</strong> of downtime&mdash;catching your breath, binding wounds, eating rations.</p>
 <ul>
 <li>Recover <strong>HP equal to your Vigor score</strong>.</li>
-<li>Recover <strong>half your maximum Stamina</strong> (rounded up).</li>
+<li><strong>Rage (Fighter):</strong> Resets to 0 (Rage must be built in combat).</li>
+<li><strong>Flow (Rogue):</strong> Recovers to 50% of pool.</li>
+<li><strong>Focus (Mage):</strong> Recovers to full.</li>
 </ul>
 
 <h3>Long Rest</h3>
-<p>A long rest requires <strong>8 hours</strong> of sleep or equivalent rest (4 hours for Elves).</p>
+<p>A long rest requires <strong>8 hours</strong> of sleep or equivalent rest.</p>
 <ul>
 <li>Recover <strong>all HP</strong>.</li>
-<li>Recover <strong>all Stamina</strong>.</li>
+<li>All resources recover to their starting values (Rage: 0, Flow: 50%, Focus: full).</li>
 <li>Remove most non-permanent conditions.</li>
 </ul>
 
@@ -1612,66 +1568,81 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter" id="ch15">
 <h1><span class="chapter-num">Chapter XV</span>Level Progression</h1>
 
-<p>Every level grants a meaningful new ability. There are no dead levels. Leveling occurs at the GM&#39;s discretion. The table below shows what every character gains at each level, with class-specific features described in Chapters VI and VII.</p>
+<p>Every level grants a meaningful new ability. There are no dead levels. Leveling occurs at the GM's discretion. The table below shows what every character gains at each level, with class-specific features described in Chapters VI and VII.</p>
 
 <table>
-<thead><tr><th>Level</th><th>Milestone</th><th>What You Gain</th></tr></thead>
+<thead><tr><th>Level</th><th>What You Gain</th></tr></thead>
 <tbody>
-<tr><td>0</td><td>Origin</td><td>Race, Stats (array: 12/11/10/10/9), Background, Minor Feat</td></tr>
-<tr><td>1</td><td>Class</td><td>Choose Class + Discipline. Gain class HP, Stamina pool, and starting proficiencies.</td></tr>
-<tr><td>2</td><td>Stat Increase</td><td>+1 to any stat. Gain a class feature: Fighter gets a combat modifier, Rogue gets an exploit option, Mage learns a new Base spell.</td></tr>
-<tr><td>3</td><td>Minor Feat</td><td>Choose a Minor Feat. +1 Stamina to your pool.</td></tr>
-<tr><td>4</td><td>Discipline Upgrade</td><td>Your Discipline gains an enhanced ability (e.g., Two-Handed rerolls 1s and 2s; Ambusher first-damage increases to +3).</td></tr>
-<tr><td>5</td><td>Subclass</td><td>Choose a Subclass. Gain Level 5 subclass feature. +1 to a stat that is not your highest.</td></tr>
-<tr><td>6</td><td>Major Feat</td><td>Choose a Major Feat. +1 Stamina.</td></tr>
-<tr><td>7</td><td>Stat Increase</td><td>+1 to any stat. Gain a class feature.</td></tr>
-<tr><td>8</td><td>Minor Feat</td><td>Choose a Minor Feat. Gain a new skill proficiency.</td></tr>
-<tr><td>9</td><td>Subclass Feature</td><td>Gain Level 9 subclass feature. +1 Stamina.</td></tr>
-<tr><td>10</td><td>Discipline Mastery</td><td>Your Discipline reaches its final form with a capstone passive. +1 to a stat that is not your highest.</td></tr>
-<tr><td>11</td><td>Major Feat</td><td>Choose a Major Feat. Gain a class feature.</td></tr>
-<tr><td>12</td><td>Stat Increase</td><td>+1 to any stat. +1 Stamina.</td></tr>
-<tr><td>13</td><td>Subclass Feature</td><td>Gain Level 13 subclass feature.</td></tr>
-<tr><td>14</td><td>Minor Feat</td><td>Choose a Minor Feat. Gain a new skill proficiency. +1 Stamina.</td></tr>
-<tr><td>15</td><td>Stat Increase</td><td>+1 to any stat. Gain a class feature.</td></tr>
-<tr><td>16</td><td>Major Feat</td><td>Choose a Major Feat. +1 Stamina.</td></tr>
-<tr><td>17</td><td>Subclass Capstone</td><td>Gain Level 17 subclass feature. +1 to a stat that is not your highest.</td></tr>
-<tr><td>18</td><td>Legendary Trait</td><td>Gain a unique legendary ability from your class (Fighter: extra reaction, Rogue: auto-Expose on first attack, Mage: free modifier once per combat).</td></tr>
-<tr><td>19</td><td>Stat Increase</td><td>+1 to any stat. +1 Stamina. Gain a class feature.</td></tr>
-<tr><td>20</td><td>Pinnacle</td><td>Choose a second Discipline from your class (gain its base benefits). Your maximum stat cap increases to 18.</td></tr>
+<tr><td><strong>0</strong></td><td>Race (includes base HP), Background, 2 Minor Feats, Stats (array: 12/11/10/10/9 + racial +1/&minus;1)</td></tr>
+<tr><td><strong>1</strong></td><td>Class + Discipline, Stat Increase (+1 to any stat)</td></tr>
+<tr><td><strong>2</strong></td><td>Resource pool + class ability that uses it, Major Feat</td></tr>
+<tr><td><strong>3</strong></td><td>Subclass, Minor Feat</td></tr>
+<tr><td><strong>4</strong></td><td>Class Feature, Stat Increase</td></tr>
+<tr><td><strong>5</strong></td><td>Resource Feat, Major Feat</td></tr>
+<tr><td><strong>6</strong></td><td>Discipline Upgrade, Minor Feat</td></tr>
+<tr><td><strong>7</strong></td><td>Stat Increase, Class Feature</td></tr>
+<tr><td><strong>8</strong></td><td>Major Feat, Subclass Feature</td></tr>
+<tr><td><strong>9</strong></td><td>Stat Increase, Resource Pool +1</td></tr>
+<tr><td><strong>10</strong></td><td>Discipline Mastery, Minor Feat</td></tr>
+<tr><td><strong>11</strong></td><td>Subclass Feature, Major Feat</td></tr>
+<tr><td><strong>12</strong></td><td>Stat Increase, Class Feature</td></tr>
+<tr><td><strong>13</strong></td><td>Resource Feat, Minor Feat</td></tr>
+<tr><td><strong>14</strong></td><td>Subclass Feature, Stat Increase</td></tr>
+<tr><td><strong>15</strong></td><td>Major Feat, Class Feature</td></tr>
+<tr><td><strong>16</strong></td><td>Stat Increase, Minor Feat</td></tr>
+<tr><td><strong>17</strong></td><td>Subclass Capstone</td></tr>
+<tr><td><strong>18</strong></td><td>Legendary Trait, Stat Increase</td></tr>
+<tr><td><strong>19</strong></td><td>Major Feat, Resource Pool +1</td></tr>
+<tr><td><strong>20</strong></td><td>Pinnacle &mdash; Second Discipline, stat cap increases to 18</td></tr>
 </tbody>
 </table>
 
 <div class="callout">
 <div class="callout-title">Progression Summary</div>
 <ul>
-<li><strong>Stat Increases:</strong> Levels 2, 5, 7, 10, 12, 15, 17, 19 (8 total, mix of free and restricted)</li>
-<li><strong>Minor Feats:</strong> Levels 0, 3, 8, 14 (4 total)</li>
-<li><strong>Major Feats:</strong> Levels 6, 11, 16 (3 total)</li>
-<li><strong>Subclass Features:</strong> Levels 5, 9, 13, 17 (4 total)</li>
-<li><strong>Stamina Increases:</strong> Levels 3, 6, 9, 12, 14, 16, 19 (7 total, growing from base ~4-6 to ~11-13)</li>
+<li><strong>Stat Increases:</strong> Levels 1, 4, 7, 9, 12, 14, 16, 18 (8 total)</li>
+<li><strong>Minor Feats:</strong> Levels 0 (&times;2), 3, 6, 10, 13, 16 (7 total)</li>
+<li><strong>Major Feats:</strong> Levels 2, 5, 8, 11, 15, 19 (6 total)</li>
+<li><strong>Subclass Features:</strong> Levels 3, 8, 11, 14, 17 (5 total)</li>
+<li><strong>Resource Pool Increases:</strong> Levels 9, 19 (+1 each)</li>
 </ul>
 </div>
 
-<h2>Resource System: Stamina</h2>
+<h2>Resource System</h2>
+
+<p>Each class uses a unique resource that ebbs and flows differently in combat, creating distinct tactical identities.</p>
 
 <div class="rule-box">
-<div class="callout-title">Stamina</div>
-<p>Stamina is the universal resource for all classes. Your starting pool depends on your class:</p>
-<ul>
-<li><strong>Fighter:</strong> 4 + Vigor modifier</li>
-<li><strong>Rogue:</strong> 4 + Reflex modifier</li>
-<li><strong>Mage:</strong> 6 + Wit modifier</li>
-</ul>
-<p>Stamina grows by +1 at designated levels (see table above). It recovers on rest.</p>
+<div class="callout-title">Rage (Fighter)</div>
+<p><strong>Gained:</strong> By dealing or taking damage in combat.<br>
+<strong>Lost:</strong> When out of combat, stunned, or unable to act.<br>
+<strong>Starting:</strong> 0 (Rage must be built through violence).</p>
+<p>Fighters grow more powerful as combat intensifies. Their abilities cost Rage, creating a push-pull: spend Rage for devastating effects, or let it build for even bigger payoffs.</p>
 </div>
 
-<h3>How Each Class Spends Stamina</h3>
+<div class="rule-box">
+<div class="callout-title">Flow (Rogue)</div>
+<p><strong>Gained:</strong> By moving, attacking, and dodging.<br>
+<strong>Lost:</strong> When hit by an enemy.<br>
+<strong>Starting:</strong> 50% of maximum pool.</p>
+<p>Rogues must stay in motion and avoid getting hit to maintain their resource. Getting struck disrupts their rhythm, making evasion both a defensive and offensive priority.</p>
+</div>
+
+<div class="rule-box">
+<div class="callout-title">Focus (Mage)</div>
+<p><strong>Gained:</strong> Through preparation and deliberate action.<br>
+<strong>Lost:</strong> Small loss when targeted by an attack; large loss when hit.<br>
+<strong>Starting:</strong> Full (0 if surprised).</p>
+<p>Mages start strong but erode under pressure. Positioning and ally protection are critical&mdash;a Mage under fire rapidly loses the Focus needed for powerful spells.</p>
+</div>
+
+<h3>How Each Class Spends Resources</h3>
 <table>
-<thead><tr><th>Class</th><th>Stamina Usage</th><th>Examples</th></tr></thead>
+<thead><tr><th>Class</th><th>Resource</th><th>Usage</th><th>Examples</th></tr></thead>
 <tbody>
-<tr><td><strong>Fighter</strong></td><td>Combat modifiers that control space</td><td>Empowered strikes, enhanced blocks, tactical shoves, ally buffs</td></tr>
-<tr><td><strong>Rogue</strong></td><td>Exploit modifiers that create openings</td><td>Feint attacks, enhanced dodges, exposing strikes, dirty tricks</td></tr>
-<tr><td><strong>Mage</strong></td><td>Spell construction modifiers</td><td>Every spell modifier costs Stamina; more complex spells cost more</td></tr>
+<tr><td><strong>Fighter</strong></td><td>Rage</td><td>Combat modifiers that control space</td><td>Empowered strikes, enhanced blocks, tactical shoves, ally buffs</td></tr>
+<tr><td><strong>Rogue</strong></td><td>Flow</td><td>Exploit modifiers that create openings</td><td>Feint attacks, enhanced dodges, exposing strikes, dirty tricks</td></tr>
+<tr><td><strong>Mage</strong></td><td>Focus</td><td>Spell construction modifiers</td><td>Every spell modifier costs Focus; more complex spells cost more</td></tr>
 </tbody>
 </table>
 
@@ -1688,11 +1659,29 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <tbody>
 <tr><td>Ability Check</td><td>3d6 + Stat Modifier + Proficiency (if proficient) vs. TN</td></tr>
 <tr><td>Attack Roll</td><td>3d6 + Stat Modifier + Proficiency vs. Guard</td></tr>
-<tr><td>Guard</td><td>8 + Armor Bonus + Reflex Modifier (limited by armor)</td></tr>
-<tr><td>Stat Modifier</td><td>Stat Score &minus; 10</td></tr>
+<tr><td>Guard</td><td>8 + Armor Bonus + Reflex Modifier</td></tr>
+<tr><td>Stat Modifier</td><td>Paired ranges: 8&ndash;9 = &minus;1, 10&ndash;11 = +0, 12&ndash;13 = +1, 14&ndash;15 = +2, 16&ndash;17 = +3</td></tr>
 <tr><td>Proficiency Bonus</td><td>+2 (flat, does not scale)</td></tr>
 <tr><td>Initiative</td><td>3d6 + Reflex Mod + Sense Mod + bonuses</td></tr>
 <tr><td>Movement</td><td>30 ft per action (default)</td></tr>
+</tbody>
+</table>
+
+<h2>Stat Modifier Table</h2>
+<table>
+<thead><tr><th>Stat Range</th><th>8&ndash;9</th><th>10&ndash;11</th><th>12&ndash;13</th><th>14&ndash;15</th><th>16&ndash;17</th></tr></thead>
+<tbody>
+<tr><td><strong>Modifier</strong></td><td>&minus;1</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td></tr>
+</tbody>
+</table>
+
+<h2>Resource Summary</h2>
+<table>
+<thead><tr><th>Resource</th><th>Class</th><th>Gained</th><th>Lost</th><th>Starting</th></tr></thead>
+<tbody>
+<tr><td><strong>Rage</strong></td><td>Fighter</td><td>Dealing/taking damage</td><td>Out of combat, stunned, unable to act</td><td>0</td></tr>
+<tr><td><strong>Flow</strong></td><td>Rogue</td><td>Moving, attacking, dodging</td><td>When hit by an enemy</td><td>50% of pool</td></tr>
+<tr><td><strong>Focus</strong></td><td>Mage</td><td>Preparation, deliberate action</td><td>Targeted (small loss), hit (large loss)</td><td>Full (0 if surprised)</td></tr>
 </tbody>
 </table>
 
@@ -1724,7 +1713,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <thead><tr><th>Resource</th><th>Per Turn</th></tr></thead>
 <tbody>
 <tr><td>Actions</td><td>2</td></tr>
-<tr><td>Reactions</td><td>Consume next turn&#39;s actions</td></tr>
+<tr><td>Reactions</td><td>Consume next turn's actions</td></tr>
 <tr><td>Movement</td><td>30 ft per action</td></tr>
 </tbody>
 </table>
@@ -1746,20 +1735,12 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </tbody>
 </table>
 
-<h2>Stat Modifier Table</h2>
-<table>
-<thead><tr><th>Score</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th></tr></thead>
-<tbody>
-<tr><td><strong>Mod</strong></td><td>&minus;3</td><td>&minus;2</td><td>&minus;1</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td></tr>
-</tbody>
-</table>
-
 <h2>Starting Array</h2>
 <p style="text-align:center; font-size: 1.3em;"><strong>12 &bull; 11 &bull; 10 &bull; 10 &bull; 9</strong></p>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
 
-<p style="text-align: center; margin-top: 40px; font-family: 'Cinzel Decorative', serif; color: var(--accent-gold); font-size: 1.2em;">End of the Player&#39;s Handbook</p>
+<p style="text-align: center; margin-top: 40px; font-family: 'Cinzel Decorative', serif; color: var(--accent-gold); font-size: 1.2em;">End of the Player's Handbook</p>
 <p style="text-align: center; font-style: italic; color: var(--ink-light);">Go forth and roll well.</p>
 
 </div>
