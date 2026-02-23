@@ -62,11 +62,8 @@ body {
   overflow: hidden;
 }
 .cover::before {
-  content: "⚔";
-  font-size: 120px;
-  display: block;
-  margin-bottom: 20px;
-  opacity: 0.3;
+  content: "";
+  display: none;
 }
 .cover h1 {
   font-family: 'Cinzel Decorative', serif;
@@ -289,6 +286,62 @@ li { margin-bottom: 4px; }
 strong { color: var(--ink); }
 em { color: var(--ink-light); }
 
+/* Pixel art */
+.pixel { shape-rendering: crispEdges; }
+.chapter-art { text-align: center; margin: 15px 0 20px 0; }
+.cover-art { margin: 20px 0; }
+.cover .corner-ornament {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+.cover .corner-ornament.tl { top: 20px; left: 20px; }
+.cover .corner-ornament.tr { top: 20px; right: 20px; transform: scaleX(-1); }
+.cover .corner-ornament.bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.cover .corner-ornament.br { bottom: 20px; right: 20px; transform: scale(-1,-1); }
+.cover-divider { margin: 30px 0; }
+
+.race-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.race-card .race-icon { flex-shrink: 0; margin-top: 8px; }
+.race-card .race-text { flex: 1; }
+
+.class-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.class-icon-card {
+  background: var(--parchment-dark);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+.class-icon-card h3 { margin-top: 10px; }
+
+.weapon-type-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+.weapon-type-header h3 { margin-top: 0; }
+
+.element-icon { display: inline-block; vertical-align: middle; margin-right: 8px; }
+
+.large-scene { text-align: center; margin: 25px auto; max-width: 100%; }
+.large-scene svg { max-width: 100%; height: auto; }
+
+.condition-icon { display: inline-block; vertical-align: middle; margin-right: 6px; }
+.action-icon { display: inline-block; vertical-align: middle; margin-right: 4px; }
+.subclass-icon { text-align: center; margin-bottom: -10px; }
+.section-header-icon { display: inline-block; vertical-align: middle; margin-right: 8px; }
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -314,8 +367,92 @@ em { color: var(--ink-light); }
 
 <!-- COVER -->
 <div class="cover">
+
+<!-- Corner ornaments -->
+<svg class="corner-ornament tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="40" fill="#c9a84c" opacity="0.6"/><rect x="0" y="0" width="40" height="4" fill="#c9a84c" opacity="0.6"/><rect x="4" y="4" width="4" height="4" fill="#c9a84c" opacity="0.4"/><rect x="8" y="8" width="4" height="4" fill="#c9a84c" opacity="0.3"/><rect x="0" y="44" width="4" height="4" fill="#c9a84c" opacity="0.3"/><rect x="44" y="0" width="4" height="4" fill="#c9a84c" opacity="0.3"/></svg>
+<svg class="corner-ornament tr" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="40" fill="#c9a84c" opacity="0.6"/><rect x="0" y="0" width="40" height="4" fill="#c9a84c" opacity="0.6"/><rect x="4" y="4" width="4" height="4" fill="#c9a84c" opacity="0.4"/><rect x="8" y="8" width="4" height="4" fill="#c9a84c" opacity="0.3"/></svg>
+<svg class="corner-ornament bl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="40" fill="#c9a84c" opacity="0.6"/><rect x="0" y="0" width="40" height="4" fill="#c9a84c" opacity="0.6"/><rect x="4" y="4" width="4" height="4" fill="#c9a84c" opacity="0.4"/></svg>
+<svg class="corner-ornament br" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="4" height="40" fill="#c9a84c" opacity="0.6"/><rect x="0" y="0" width="40" height="4" fill="#c9a84c" opacity="0.6"/><rect x="4" y="4" width="4" height="4" fill="#c9a84c" opacity="0.4"/></svg>
+
+<!-- Shield & crossed swords emblem -->
+<div class="cover-art">
+<svg width="260" height="260" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<rect x="20" y="16" width="24" height="4" fill="#6b5b3e" class="pixel"/><rect x="18" y="20" width="28" height="4" fill="#8b7355" class="pixel"/><rect x="18" y="24" width="28" height="4" fill="#8b7355" class="pixel"/><rect x="18" y="28" width="28" height="4" fill="#7b6345" class="pixel"/><rect x="20" y="32" width="24" height="4" fill="#7b6345" class="pixel"/><rect x="22" y="36" width="20" height="4" fill="#6b5b3e" class="pixel"/><rect x="24" y="40" width="16" height="4" fill="#6b5b3e" class="pixel"/><rect x="26" y="44" width="12" height="4" fill="#5b4b2e" class="pixel"/><rect x="28" y="48" width="8" height="4" fill="#5b4b2e" class="pixel"/><rect x="30" y="52" width="4" height="2" fill="#4b3b1e" class="pixel"/>
+<rect x="30" y="24" width="4" height="4" fill="#c9a84c" class="pixel"/><rect x="26" y="28" width="12" height="4" fill="#c9a84c" class="pixel"/><rect x="28" y="32" width="8" height="4" fill="#c9a84c" class="pixel"/><rect x="30" y="36" width="4" height="4" fill="#c9a84c" class="pixel"/>
+<rect x="8" y="8" width="4" height="4" fill="#d4d4d4" class="pixel"/><rect x="12" y="12" width="4" height="4" fill="#c0c0c0" class="pixel"/><rect x="16" y="16" width="4" height="4" fill="#c0c0c0" class="pixel"/><rect x="20" y="20" width="4" height="4" fill="#b0b0b0" class="pixel"/><rect x="24" y="24" width="4" height="4" fill="#a0a0a0" class="pixel"/>
+<rect x="4" y="12" width="4" height="4" fill="#c9a84c" class="pixel"/><rect x="8" y="12" width="4" height="4" fill="#8b1a1a" class="pixel"/><rect x="12" y="8" width="4" height="4" fill="#c9a84c" class="pixel"/>
+<rect x="52" y="8" width="4" height="4" fill="#d4d4d4" class="pixel"/><rect x="48" y="12" width="4" height="4" fill="#c0c0c0" class="pixel"/><rect x="44" y="16" width="4" height="4" fill="#c0c0c0" class="pixel"/><rect x="40" y="20" width="4" height="4" fill="#b0b0b0" class="pixel"/><rect x="36" y="24" width="4" height="4" fill="#a0a0a0" class="pixel"/>
+<rect x="56" y="12" width="4" height="4" fill="#c9a84c" class="pixel"/><rect x="52" y="12" width="4" height="4" fill="#8b1a1a" class="pixel"/><rect x="48" y="8" width="4" height="4" fill="#c9a84c" class="pixel"/>
+</svg>
+</div>
+
+<!-- Scene 1: The Party Assembles -->
+<div class="large-scene">
+<svg width="700" height="200" viewBox="0 0 175 50" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<!-- Moon -->
+<circle cx="130" cy="12" r="8" fill="#e8d5a3" opacity="0.3"/>
+<rect x="128" y="5" width="4" height="4" fill="#e8d5a3" opacity="0.4" class="pixel"/>
+<rect x="130" y="7" width="4" height="4" fill="#e8d5a3" opacity="0.35" class="pixel"/>
+<rect x="126" y="8" width="4" height="4" fill="#e8d5a3" opacity="0.35" class="pixel"/>
+<rect x="128" y="10" width="4" height="4" fill="#e8d5a3" opacity="0.3" class="pixel"/>
+<!-- Stars -->
+<rect x="20" y="4" width="2" height="2" fill="#c9a84c" opacity="0.5" class="pixel"/>
+<rect x="50" y="8" width="2" height="2" fill="#c9a84c" opacity="0.4" class="pixel"/>
+<rect x="90" y="3" width="2" height="2" fill="#c9a84c" opacity="0.5" class="pixel"/>
+<rect x="155" y="6" width="2" height="2" fill="#c9a84c" opacity="0.4" class="pixel"/>
+<rect x="40" y="12" width="2" height="2" fill="#c9a84c" opacity="0.3" class="pixel"/>
+<rect x="110" y="5" width="2" height="2" fill="#c9a84c" opacity="0.35" class="pixel"/>
+<!-- Hilltop ground -->
+<rect x="0" y="38" width="175" height="12" fill="#1a0e08" class="pixel"/>
+<rect x="10" y="36" width="155" height="4" fill="#2c1810" class="pixel"/>
+<rect x="25" y="34" width="125" height="4" fill="#3d2517" class="pixel"/>
+<rect x="40" y="32" width="95" height="4" fill="#2c1810" class="pixel"/>
+<!-- Fighter silhouette (center-left, sword + shield) -->
+<rect x="62" y="18" width="6" height="2" fill="#1a0e08" class="pixel"/><!-- helmet -->
+<rect x="63" y="20" width="4" height="2" fill="#1a0e08" class="pixel"/><!-- head -->
+<rect x="61" y="22" width="8" height="2" fill="#1a0e08" class="pixel"/><!-- shoulders -->
+<rect x="63" y="24" width="4" height="4" fill="#1a0e08" class="pixel"/><!-- torso -->
+<rect x="63" y="28" width="2" height="4" fill="#1a0e08" class="pixel"/><!-- left leg -->
+<rect x="66" y="28" width="2" height="4" fill="#1a0e08" class="pixel"/><!-- right leg -->
+<rect x="56" y="20" width="2" height="8" fill="#1a0e08" class="pixel"/><!-- shield -->
+<rect x="58" y="22" width="2" height="4" fill="#1a0e08" class="pixel"/>
+<rect x="70" y="14" width="2" height="2" fill="#c9a84c" opacity="0.6" class="pixel"/><!-- sword tip -->
+<rect x="70" y="16" width="2" height="8" fill="#a0a0a0" opacity="0.5" class="pixel"/><!-- sword blade -->
+<rect x="69" y="24" width="4" height="2" fill="#c9a84c" opacity="0.5" class="pixel"/><!-- crossguard -->
+<!-- Rogue silhouette (right, dual daggers, cloaked) -->
+<rect x="100" y="20" width="4" height="2" fill="#1a0e08" class="pixel"/><!-- hood -->
+<rect x="101" y="22" width="2" height="2" fill="#1a0e08" class="pixel"/><!-- head -->
+<rect x="98" y="24" width="8" height="2" fill="#1a0e08" class="pixel"/><!-- cloak shoulders -->
+<rect x="99" y="26" width="6" height="4" fill="#1a0e08" class="pixel"/><!-- torso/cloak -->
+<rect x="100" y="30" width="2" height="2" fill="#1a0e08" class="pixel"/><!-- left leg -->
+<rect x="103" y="30" width="2" height="2" fill="#1a0e08" class="pixel"/><!-- right leg -->
+<rect x="96" y="22" width="2" height="4" fill="#a0a0a0" opacity="0.4" class="pixel"/><!-- left dagger -->
+<rect x="106" y="22" width="2" height="4" fill="#a0a0a0" opacity="0.4" class="pixel"/><!-- right dagger -->
+<rect x="97" y="26" width="2" height="6" fill="#1a0e08" class="pixel"/><!-- cloak trail left -->
+<rect x="105" y="26" width="2" height="6" fill="#1a0e08" class="pixel"/><!-- cloak trail right -->
+<!-- Mage silhouette (left, staff with glowing orb) -->
+<rect x="36" y="20" width="4" height="2" fill="#1a0e08" class="pixel"/><!-- hat top -->
+<rect x="34" y="22" width="8" height="2" fill="#1a0e08" class="pixel"/><!-- hat brim -->
+<rect x="36" y="24" width="4" height="2" fill="#1a0e08" class="pixel"/><!-- head -->
+<rect x="35" y="26" width="6" height="2" fill="#1a0e08" class="pixel"/><!-- shoulders -->
+<rect x="36" y="28" width="4" height="4" fill="#1a0e08" class="pixel"/><!-- robe -->
+<rect x="34" y="30" width="8" height="2" fill="#1a0e08" class="pixel"/><!-- robe base -->
+<rect x="30" y="16" width="2" height="16" fill="#5b3b1e" opacity="0.6" class="pixel"/><!-- staff -->
+<rect x="28" y="12" width="6" height="4" fill="#4a7ab5" opacity="0.4" class="pixel"/><!-- orb glow -->
+<rect x="29" y="13" width="4" height="2" fill="#7ab5ee" opacity="0.5" class="pixel"/><!-- orb core -->
+<rect x="27" y="11" width="2" height="2" fill="#7ab5ee" opacity="0.2" class="pixel"/><!-- glow -->
+<rect x="33" y="11" width="2" height="2" fill="#7ab5ee" opacity="0.2" class="pixel"/><!-- glow -->
+</svg>
+</div>
+
 <h1>Player's Handbook</h1>
 <div class="subtitle">A Tactical Tabletop RPG</div>
+
+<!-- Pixel divider -->
+<div class="cover-divider">
+<svg width="300" height="16" viewBox="0 0 75 4" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="1" width="75" height="2" fill="#5b4b2e" opacity="0.3" class="pixel"/><rect x="30" y="0" width="4" height="4" fill="#c9a84c" class="pixel"/><rect x="34" y="1" width="2" height="2" fill="#a08040" class="pixel"/><rect x="39" y="1" width="2" height="2" fill="#a08040" class="pixel"/><rect x="36" y="0" width="3" height="4" fill="#c9a84c" class="pixel"/><rect x="24" y="1" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="49" y="1" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="18" y="1" width="2" height="2" fill="#a08040" opacity="0.6" class="pixel"/><rect x="55" y="1" width="2" height="2" fill="#a08040" opacity="0.6" class="pixel"/></svg>
+</div>
+
 <div class="edition">Designed by Jason &bull; First Edition</div>
 </div>
 
@@ -345,6 +482,8 @@ em { color: var(--ink-light); }
 <!-- CHAPTER 1: INTRODUCTION -->
 <div class="chapter" id="ch1">
 <h1><span class="chapter-num">Chapter I</span>Introduction</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
 
 <p>Welcome to a tabletop roleplaying game built from the ground up to deliver <strong>tactical, grounded play with constant meaningful choices</strong>. This system was designed to fix the pain points of traditional fantasy RPGs while preserving the things that make them great: the thrill of rolling dice, the joy of building a character, and the tension of life-or-death combat.</p>
 
@@ -392,6 +531,8 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch2">
 <h1><span class="chapter-num">Chapter II</span>Character Creation</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Creating a character follows these steps. Each step is detailed in its own chapter.</p>
 
 <div class="callout">
@@ -425,6 +566,8 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch3">
 <h1><span class="chapter-num">Chapter III</span>Races</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Your race represents your character's heritage. Each race grants a <strong>+1 bonus to one stat</strong>, a <strong>&minus;1 penalty to another stat</strong>, a <strong>base Hit Point value</strong>, and one <strong>unique racial trait</strong>. Races are intentionally simple&mdash;your class and feats define your power, not your bloodline.</p>
 
 <table>
@@ -439,34 +582,44 @@ em { color: var(--ink-light); }
 </table>
 
 <div class="race-card">
+<div class="race-icon"><svg width="56" height="56" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="7" y="2" width="2" height="2" fill="#7b7b7b" class="pixel"/><rect x="5" y="4" width="6" height="2" fill="#8b8b8b" class="pixel"/><rect x="3" y="6" width="10" height="2" fill="#9b9b8b" class="pixel"/><rect x="1" y="8" width="14" height="2" fill="#8b7b6b" class="pixel"/><rect x="0" y="10" width="16" height="2" fill="#7b6b5b" class="pixel"/><rect x="0" y="12" width="16" height="2" fill="#6b5b4b" class="pixel"/><rect x="6" y="3" width="2" height="2" fill="#ababab" class="pixel" opacity="0.5"/><rect x="7" y="6" width="2" height="6" fill="#a08040" class="pixel" opacity="0.4"/></svg></div>
+<div class="race-text">
 <h3>Stoneskin</h3>
 <p><strong>Stat Bonus:</strong> +1 Vigor &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Wit &nbsp;|&nbsp; <strong>Base HP:</strong> 12</p>
 <p><strong>Racial Trait &mdash; Tough:</strong> You gain Minor Advantage on stabilization rolls. Your natural resilience makes you harder to bring down once you've fallen.</p>
-</div>
+</div></div>
 
 <div class="race-card">
+<div class="race-icon"><svg width="56" height="56" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="10" y="1" width="2" height="2" fill="#6aaa6a" class="pixel"/><rect x="8" y="3" width="4" height="2" fill="#5a9a5a" class="pixel"/><rect x="6" y="5" width="6" height="2" fill="#4a8a4a" class="pixel"/><rect x="4" y="7" width="6" height="2" fill="#3a7a3a" class="pixel"/><rect x="3" y="9" width="4" height="2" fill="#2d6a2d" class="pixel"/><rect x="2" y="11" width="3" height="2" fill="#1d5a1d" class="pixel"/><rect x="8" y="3" width="1" height="10" fill="#c9a84c" class="pixel" opacity="0.5"/><rect x="12" y="5" width="3" height="1" fill="#4a8a4a" class="pixel" opacity="0.3"/></svg></div>
+<div class="race-text">
 <h3>Lightfoot</h3>
 <p><strong>Stat Bonus:</strong> +1 Reflex &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Might &nbsp;|&nbsp; <strong>Base HP:</strong> 10</p>
 <p><strong>Racial Trait &mdash; Lightfooted:</strong> You ignore the first 5 feet of difficult terrain each round. Your nimble steps carry you effortlessly over rough ground.</p>
-</div>
+</div></div>
 
 <div class="race-card">
+<div class="race-icon"><svg width="56" height="56" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="4" y="4" width="8" height="2" fill="#c09070" class="pixel"/><rect x="3" y="6" width="10" height="2" fill="#b08060" class="pixel"/><rect x="3" y="8" width="10" height="2" fill="#a07050" class="pixel"/><rect x="4" y="10" width="8" height="2" fill="#b08060" class="pixel"/><rect x="4" y="4" width="2" height="2" fill="#d0a080" class="pixel"/><rect x="7" y="4" width="2" height="2" fill="#d0a080" class="pixel"/><rect x="10" y="4" width="2" height="2" fill="#d0a080" class="pixel"/><rect x="1" y="3" width="2" height="1" fill="#8b1a1a" class="pixel" opacity="0.5"/><rect x="13" y="5" width="2" height="1" fill="#8b1a1a" class="pixel" opacity="0.5"/></svg></div>
+<div class="race-text">
 <h3>Ironblood</h3>
 <p><strong>Stat Bonus:</strong> +1 Might &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Reflex &nbsp;|&nbsp; <strong>Base HP:</strong> 11</p>
 <p><strong>Racial Trait &mdash; Max Effort:</strong> Once per rest, you may roll a Might check with Major Advantage. When you need to push beyond your limits, your body answers.</p>
-</div>
+</div></div>
 
 <div class="race-card">
+<div class="race-icon"><svg width="56" height="56" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="4" y="6" width="8" height="2" fill="#e8d5a3" class="pixel"/><rect x="2" y="8" width="12" height="2" fill="#e8d5a3" class="pixel"/><rect x="4" y="10" width="8" height="2" fill="#e8d5a3" class="pixel"/><rect x="6" y="7" width="4" height="4" fill="#4a7ab5" class="pixel"/><rect x="7" y="8" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="8" y="7" width="1" height="1" fill="#fff" class="pixel" opacity="0.7"/><rect x="3" y="5" width="10" height="1" fill="#7b5a2e" class="pixel"/><rect x="3" y="12" width="10" height="1" fill="#7b5a2e" class="pixel"/></svg></div>
+<div class="race-text">
 <h3>Keen-eye</h3>
 <p><strong>Stat Bonus:</strong> +1 Sense &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Vigor &nbsp;|&nbsp; <strong>Base HP:</strong> 9</p>
 <p><strong>Racial Trait &mdash; Aware:</strong> You cannot be surprised unless you are unconscious or sleeping. Your senses are always alert, catching threats others miss.</p>
-</div>
+</div></div>
 
 <div class="race-card">
+<div class="race-icon"><svg width="56" height="56" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="5" y="3" width="6" height="2" fill="#5a5a8a" class="pixel"/><rect x="3" y="5" width="10" height="2" fill="#6a6a9a" class="pixel"/><rect x="3" y="7" width="10" height="2" fill="#5a5a8a" class="pixel"/><rect x="4" y="9" width="8" height="2" fill="#4a4a7a" class="pixel"/><rect x="5" y="11" width="6" height="2" fill="#3a3a6a" class="pixel"/><rect x="5" y="4" width="2" height="2" fill="#9a9aee" class="pixel" opacity="0.5"/><rect x="9" y="6" width="2" height="2" fill="#9a9aee" class="pixel" opacity="0.4"/><rect x="6" y="8" width="2" height="2" fill="#9a9aee" class="pixel" opacity="0.3"/><rect x="1" y="4" width="1" height="1" fill="#c9a84c" class="pixel" opacity="0.4"/><rect x="14" y="6" width="1" height="1" fill="#c9a84c" class="pixel" opacity="0.4"/></svg></div>
+<div class="race-text">
 <h3>Quickmind</h3>
 <p><strong>Stat Bonus:</strong> +1 Wit &nbsp;|&nbsp; <strong>Stat Penalty:</strong> &minus;1 Sense &nbsp;|&nbsp; <strong>Base HP:</strong> 10</p>
 <p><strong>Racial Trait &mdash; Second Thought:</strong> Once per rest, you may reroll a failed Wit check. Your quick mind catches mistakes before they cost you.</p>
-</div>
+</div></div>
 
 <div class="ornament">&#9830; &#9830; &#9830;</div>
 </div>
@@ -474,6 +627,8 @@ em { color: var(--ink-light); }
 <!-- CHAPTER 4: STATS & MODIFIERS -->
 <div class="chapter" id="ch4">
 <h1><span class="chapter-num">Chapter IV</span>Stats &amp; Modifiers</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
 
 <p>Your character is defined by <strong>five stats</strong>. Unlike systems with six attributes and confusing mental stat overlap, these five stats are distinct and cover everything your character might do.</p>
 
@@ -531,38 +686,40 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch5">
 <h1><span class="chapter-num">Chapter V</span>Backgrounds</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Your background represents what your character did before becoming an adventurer. Each background offers a <strong>trade proficiency choice</strong> (pick one of two specializations), <strong>2 additional proficiency picks</strong> from a provided list, and <strong>starting gear with gold</strong>.</p>
 
 <div class="bg-card">
-<h3>Outlander</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="5" y="0" width="2" height="2" fill="#2d6a2d" class="pixel"/><rect x="3" y="2" width="6" height="2" fill="#3a7a3a" class="pixel"/><rect x="1" y="4" width="10" height="2" fill="#4a8a4a" class="pixel"/><rect x="0" y="6" width="12" height="2" fill="#5b3b1e" class="pixel"/><rect x="5" y="2" width="2" height="6" fill="#4b2b0e" class="pixel"/></svg>Outlander</h3>
 <p><strong>Trade Proficiency (choose one):</strong> Hunter (Tracking) <em>or</em> Hermit (Survival)</p>
 <p><strong>Choose 2 Proficiencies from:</strong> Tracking, Hunting, Climbing, Navigate</p>
 <p><strong>Starting Gear:</strong> Bedroll, flint &amp; steel, rope, sling, 3 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Soldier</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="3" y="0" width="6" height="2" fill="#8b8b8b" class="pixel"/><rect x="2" y="2" width="8" height="3" fill="#7b7b7b" class="pixel"/><rect x="3" y="5" width="6" height="2" fill="#6b6b6b" class="pixel"/><rect x="5" y="7" width="2" height="2" fill="#8b1a1a" class="pixel"/><rect x="4" y="4" width="1" height="1" fill="#4a4a4a" class="pixel"/><rect x="7" y="4" width="1" height="1" fill="#4a4a4a" class="pixel"/></svg>Soldier</h3>
 <p><strong>Trade Proficiency (choose one):</strong> Infantry (Intimidation) <em>or</em> Scout (Perception)</p>
 <p><strong>Choose 2 Proficiencies from:</strong> 1 Weapon proficiency, Shields, Athletics</p>
 <p><strong>Starting Gear:</strong> Military uniform, 1 basic weapon, 5 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Artisan</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="2" y="1" width="2" height="6" fill="#7b5a2e" class="pixel"/><rect x="1" y="7" width="4" height="2" fill="#a08040" class="pixel"/><rect x="7" y="3" width="4" height="2" fill="#8b8b8b" class="pixel"/><rect x="6" y="5" width="2" height="4" fill="#7b5a2e" class="pixel"/><rect x="8" y="5" width="1" height="1" fill="#c0c0c0" class="pixel"/></svg>Artisan</h3>
 <p><strong>Trade Proficiency (choose one):</strong> Tinkerer (Mechanisms) <em>or</em> Tradesman (Craft)</p>
 <p><strong>Choose 2 Proficiencies from:</strong> Persuasion, Performance, Deception</p>
 <p><strong>Starting Gear:</strong> Basic tool pouch, leather gloves, 10 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Scholar</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="2" y="1" width="8" height="2" fill="#7b5a2e" class="pixel"/><rect x="1" y="3" width="10" height="6" fill="#e8d5a3" class="pixel"/><rect x="2" y="9" width="8" height="2" fill="#7b5a2e" class="pixel"/><rect x="3" y="4" width="6" height="1" fill="#4a3728" class="pixel" opacity="0.3"/><rect x="3" y="6" width="6" height="1" fill="#4a3728" class="pixel" opacity="0.3"/><rect x="3" y="8" width="4" height="1" fill="#4a3728" class="pixel" opacity="0.3"/></svg>Scholar</h3>
 <p><strong>Trade Proficiency (choose one):</strong> Academic (History) <em>or</em> Healer (Treat Wound)</p>
 <p><strong>Choose 2 Proficiencies from:</strong> Investigation, History, Arcana, 1 additional language</p>
 <p><strong>Starting Gear:</strong> Notebook, ink and quill, lantern, 10 gp</p>
 </div>
 
 <div class="bg-card">
-<h3>Streetrat</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="4" y="1" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="3" y="3" width="1" height="4" fill="#a0a0a0" class="pixel"/><rect x="4" y="7" width="2" height="2" fill="#8b8b8b" class="pixel"/><rect x="8" y="3" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="5" width="4" height="1" fill="#a08040" class="pixel"/><rect x="9" y="6" width="2" height="2" fill="#c9a84c" class="pixel"/></svg>Streetrat</h3>
 <p><strong>Trade Proficiency (choose one):</strong> Thief (Pickpocket) <em>or</em> Urchin (Sleight of Hand)</p>
 <p><strong>Choose 2 Proficiencies from:</strong> Sleight of Hand, Deception, Lockpicking, Acrobatics</p>
 <p><strong>Starting Gear:</strong> Lockpick set, fake ID, dagger, old cloak, 3 gp</p>
@@ -575,6 +732,8 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch6">
 <h1><span class="chapter-num">Chapter VI</span>Classes &amp; Disciplines</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>At Level 1, you choose one of three classes. Each class has a fundamentally different relationship with its resource and the action economy. Within each class, you choose a <strong>Discipline</strong>&mdash;a fighting style that grants passive bonuses when its conditions are met.</p>
 
 <div class="callout">
@@ -586,8 +745,91 @@ em { color: var(--ink-light); }
 </ul>
 </div>
 
+<!-- Scene 2: Three Classes in Battle -->
+<div class="large-scene">
+<svg width="700" height="250" viewBox="0 0 175 62" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<!-- Background: dark cavern/battlefield -->
+<rect x="0" y="50" width="175" height="12" fill="#3d2517" class="pixel"/>
+<rect x="0" y="52" width="175" height="10" fill="#2c1810" class="pixel"/>
+<!-- Ground texture -->
+<rect x="10" y="50" width="4" height="2" fill="#4a3728" class="pixel"/>
+<rect x="40" y="50" width="6" height="2" fill="#4a3728" class="pixel"/>
+<rect x="80" y="50" width="4" height="2" fill="#4a3728" class="pixel"/>
+<rect x="120" y="50" width="6" height="2" fill="#4a3728" class="pixel"/>
+<rect x="150" y="50" width="4" height="2" fill="#4a3728" class="pixel"/>
+<!-- Monster (center-right, large beast) -->
+<rect x="100" y="24" width="10" height="4" fill="#4a2a1a" class="pixel"/><!-- head -->
+<rect x="108" y="22" width="4" height="4" fill="#4a2a1a" class="pixel"/><!-- horn -->
+<rect x="110" y="20" width="2" height="2" fill="#5a3a2a" class="pixel"/><!-- horn tip -->
+<rect x="94" y="28" width="20" height="6" fill="#3a1a0a" class="pixel"/><!-- body -->
+<rect x="92" y="34" width="24" height="6" fill="#4a2a1a" class="pixel"/><!-- lower body -->
+<rect x="94" y="40" width="4" height="10" fill="#3a1a0a" class="pixel"/><!-- front left leg -->
+<rect x="100" y="40" width="4" height="10" fill="#4a2a1a" class="pixel"/><!-- front right leg -->
+<rect x="108" y="40" width="4" height="10" fill="#3a1a0a" class="pixel"/><!-- back left leg -->
+<rect x="114" y="40" width="4" height="8" fill="#4a2a1a" class="pixel"/><!-- back right leg -->
+<rect x="102" y="24" width="2" height="2" fill="#ff4500" opacity="0.7" class="pixel"/><!-- eye -->
+<rect x="88" y="26" width="6" height="2" fill="#4a2a1a" class="pixel"/><!-- jaw open -->
+<rect x="90" y="28" width="4" height="2" fill="#5a3a2a" class="pixel"/><!-- teeth -->
+<!-- Fighter (center-left, blocking the monster) -->
+<rect x="72" y="28" width="6" height="2" fill="#8b1a1a" opacity="0.8" class="pixel"/><!-- helmet -->
+<rect x="73" y="30" width="4" height="2" fill="#d4a080" class="pixel"/><!-- face -->
+<rect x="71" y="32" width="8" height="4" fill="#8b1a1a" opacity="0.7" class="pixel"/><!-- armor -->
+<rect x="73" y="36" width="4" height="4" fill="#7b1a1a" class="pixel"/><!-- torso -->
+<rect x="73" y="40" width="2" height="6" fill="#5b3b1e" class="pixel"/><!-- left leg -->
+<rect x="76" y="40" width="2" height="6" fill="#5b3b1e" class="pixel"/><!-- right leg -->
+<rect x="73" y="46" width="2" height="4" fill="#4a2a1a" class="pixel"/><!-- left boot -->
+<rect x="76" y="46" width="2" height="4" fill="#4a2a1a" class="pixel"/><!-- right boot -->
+<!-- Fighter's shield (raised, blocking) -->
+<rect x="80" y="28" width="6" height="2" fill="#8b7355" class="pixel"/>
+<rect x="79" y="30" width="8" height="4" fill="#7b6345" class="pixel"/>
+<rect x="80" y="34" width="6" height="2" fill="#6b5b3e" class="pixel"/>
+<rect x="82" y="31" width="2" height="2" fill="#c9a84c" class="pixel"/>
+<!-- Fighter's sword -->
+<rect x="68" y="26" width="2" height="10" fill="#c0c0c0" class="pixel"/>
+<rect x="67" y="36" width="4" height="2" fill="#c9a84c" class="pixel"/>
+<!-- Sparks from shield block -->
+<rect x="87" y="27" width="2" height="2" fill="#ffcc00" opacity="0.6" class="pixel"/>
+<rect x="85" y="25" width="2" height="2" fill="#ffaa00" opacity="0.4" class="pixel"/>
+<rect x="89" y="30" width="2" height="2" fill="#ffcc00" opacity="0.5" class="pixel"/>
+<!-- Rogue (flanking from behind the monster) -->
+<rect x="126" y="30" width="4" height="2" fill="#2d4a2d" opacity="0.8" class="pixel"/><!-- hood -->
+<rect x="127" y="32" width="2" height="2" fill="#d4a080" class="pixel"/><!-- face -->
+<rect x="125" y="34" width="6" height="2" fill="#2d4a2d" opacity="0.7" class="pixel"/><!-- cloak -->
+<rect x="126" y="36" width="4" height="4" fill="#1d3a1d" class="pixel"/><!-- torso -->
+<rect x="126" y="40" width="2" height="6" fill="#2d4a2d" class="pixel"/><!-- left leg -->
+<rect x="129" y="40" width="2" height="6" fill="#2d4a2d" class="pixel"/><!-- right leg -->
+<rect x="123" y="32" width="2" height="6" fill="#c0c0c0" opacity="0.6" class="pixel"/><!-- left dagger -->
+<rect x="131" y="32" width="2" height="6" fill="#c0c0c0" opacity="0.6" class="pixel"/><!-- right dagger -->
+<!-- Rogue's green Flow aura -->
+<rect x="124" y="28" width="2" height="2" fill="#4a8a4a" opacity="0.3" class="pixel"/>
+<rect x="132" y="34" width="2" height="2" fill="#4a8a4a" opacity="0.3" class="pixel"/>
+<!-- Mage (ranged, far left, casting spell) -->
+<rect x="22" y="28" width="6" height="2" fill="#1a3a5c" opacity="0.8" class="pixel"/><!-- hat -->
+<rect x="20" y="30" width="10" height="2" fill="#1a3a5c" opacity="0.6" class="pixel"/><!-- hat brim -->
+<rect x="24" y="32" width="4" height="2" fill="#d4a080" class="pixel"/><!-- face -->
+<rect x="22" y="34" width="8" height="2" fill="#1a3a5c" opacity="0.7" class="pixel"/><!-- shoulders -->
+<rect x="23" y="36" width="6" height="6" fill="#1a3a5c" opacity="0.6" class="pixel"/><!-- robe -->
+<rect x="22" y="42" width="8" height="4" fill="#0a2a4c" class="pixel"/><!-- robe base -->
+<rect x="22" y="46" width="3" height="4" fill="#0a2a4c" class="pixel"/><!-- left robe -->
+<rect x="27" y="46" width="3" height="4" fill="#0a2a4c" class="pixel"/><!-- right robe -->
+<!-- Staff -->
+<rect x="16" y="24" width="2" height="22" fill="#5b3b1e" class="pixel"/>
+<!-- Spell bolt traveling toward monster -->
+<rect x="32" y="30" width="4" height="2" fill="#4a9ad5" opacity="0.8" class="pixel"/>
+<rect x="38" y="29" width="4" height="2" fill="#4a9ad5" opacity="0.7" class="pixel"/>
+<rect x="44" y="28" width="4" height="2" fill="#6ab5ee" opacity="0.6" class="pixel"/>
+<rect x="50" y="27" width="4" height="2" fill="#6ab5ee" opacity="0.5" class="pixel"/>
+<rect x="56" y="27" width="4" height="2" fill="#8ac5ee" opacity="0.4" class="pixel"/>
+<rect x="62" y="26" width="4" height="2" fill="#8ac5ee" opacity="0.3" class="pixel"/>
+<!-- Spell glow at mage's hand -->
+<rect x="30" y="32" width="4" height="4" fill="#4a9ad5" opacity="0.4" class="pixel"/>
+<rect x="31" y="33" width="2" height="2" fill="#8ac5ee" opacity="0.6" class="pixel"/>
+</svg>
+</div>
+
 <!-- FIGHTER -->
 <div class="fighter-section">
+<div style="text-align:center; margin-bottom: -10px;"><svg width="80" height="80" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="14" y="2" width="4" height="2" fill="#d4d4d4" class="pixel"/><rect x="14" y="4" width="4" height="2" fill="#c0c0c0" class="pixel"/><rect x="14" y="6" width="4" height="2" fill="#c0c0c0" class="pixel"/><rect x="14" y="8" width="4" height="2" fill="#b0b0b0" class="pixel"/><rect x="14" y="10" width="4" height="2" fill="#b0b0b0" class="pixel"/><rect x="14" y="12" width="4" height="2" fill="#a0a0a0" class="pixel"/><rect x="14" y="14" width="4" height="2" fill="#a0a0a0" class="pixel"/><rect x="14" y="16" width="4" height="2" fill="#909090" class="pixel"/><rect x="16" y="4" width="2" height="14" fill="#e0e0e0" class="pixel" opacity="0.3"/><rect x="8" y="18" width="16" height="2" fill="#c9a84c" class="pixel"/><rect x="10" y="20" width="12" height="2" fill="#a08030" class="pixel"/><rect x="14" y="22" width="4" height="2" fill="#5b3b1e" class="pixel"/><rect x="14" y="24" width="4" height="2" fill="#4b2b0e" class="pixel"/><rect x="13" y="26" width="6" height="2" fill="#c9a84c" class="pixel"/><rect x="14" y="28" width="4" height="2" fill="#a08030" class="pixel"/></svg></div>
 <h2>Fighter</h2>
 <p>Fighters are masters of martial combat who control the battlefield through superior technique. They build Rage by dealing and taking damage, and spend it to empower their attacks, fortify their defenses, and manipulate positioning. A Fighter's strength is consistency&mdash;they are always dangerous, always reliable, and always in control of the space around them.</p>
 
@@ -637,6 +879,7 @@ em { color: var(--ink-light); }
 
 <!-- ROGUE -->
 <div class="rogue-section">
+<div style="text-align:center; margin-bottom: -10px;"><svg width="80" height="80" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="8" y="4" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="8" y="6" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="8" y="8" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="8" y="10" width="2" height="2" fill="#b0b0b0" class="pixel"/><rect x="8" y="12" width="2" height="2" fill="#a0a0a0" class="pixel"/><rect x="6" y="14" width="6" height="2" fill="#2d4a2d" class="pixel"/><rect x="8" y="16" width="2" height="4" fill="#5b3b1e" class="pixel"/><rect x="8" y="20" width="2" height="2" fill="#2d4a2d" class="pixel"/><rect x="22" y="4" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="22" y="6" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="22" y="8" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="22" y="10" width="2" height="2" fill="#b0b0b0" class="pixel"/><rect x="22" y="12" width="2" height="2" fill="#a0a0a0" class="pixel"/><rect x="20" y="14" width="6" height="2" fill="#2d4a2d" class="pixel"/><rect x="22" y="16" width="2" height="4" fill="#5b3b1e" class="pixel"/><rect x="22" y="20" width="2" height="2" fill="#2d4a2d" class="pixel"/><rect x="12" y="24" width="8" height="2" fill="#3d3d3d" class="pixel"/><rect x="10" y="26" width="12" height="2" fill="#2d2d2d" class="pixel"/><rect x="12" y="26" width="2" height="2" fill="#4a4a4a" class="pixel"/><rect x="18" y="26" width="2" height="2" fill="#4a4a4a" class="pixel"/><rect x="12" y="28" width="8" height="2" fill="#2d2d2d" class="pixel"/></svg></div>
 <h2>Rogue</h2>
 <p>Rogues are opportunists who thrive on exploiting every weakness. They maintain Flow by moving, attacking, and dodging&mdash;turning every exchange into a chance to expose the enemy for a devastating follow-up. Flow is lost when hit by enemies, so Rogues must stay elusive. Surprised enemies are Exposed, giving Rogues the highest single-target burst damage in the game.</p>
 
@@ -675,6 +918,7 @@ em { color: var(--ink-light); }
 
 <!-- MAGE -->
 <div class="mage-section">
+<div style="text-align:center; margin-bottom: -10px;"><svg width="80" height="80" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="13" y="2" width="6" height="2" fill="#4a7ab5" class="pixel" opacity="0.3"/><rect x="14" y="3" width="4" height="2" fill="#6a9ad5" class="pixel"/><rect x="13" y="5" width="6" height="2" fill="#5a8ac5" class="pixel"/><rect x="14" y="7" width="4" height="2" fill="#4a7ab5" class="pixel"/><rect x="15" y="4" width="2" height="2" fill="#9abaee" class="pixel" opacity="0.6"/><rect x="15" y="9" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="15" y="11" width="2" height="2" fill="#7b5a2e" class="pixel"/><rect x="15" y="13" width="2" height="2" fill="#6b4a1e" class="pixel"/><rect x="15" y="15" width="2" height="2" fill="#7b5a2e" class="pixel"/><rect x="15" y="17" width="2" height="2" fill="#6b4a1e" class="pixel"/><rect x="15" y="19" width="2" height="2" fill="#7b5a2e" class="pixel"/><rect x="15" y="21" width="2" height="2" fill="#6b4a1e" class="pixel"/><rect x="15" y="23" width="2" height="2" fill="#7b5a2e" class="pixel"/><rect x="15" y="25" width="2" height="2" fill="#6b4a1e" class="pixel"/><rect x="15" y="27" width="2" height="2" fill="#5b3a0e" class="pixel"/><rect x="10" y="2" width="2" height="2" fill="#c9a84c" class="pixel" opacity="0.5"/><rect x="20" y="6" width="2" height="2" fill="#c9a84c" class="pixel" opacity="0.4"/><rect x="8" y="7" width="2" height="2" fill="#c9a84c" class="pixel" opacity="0.3"/></svg></div>
 <h2>Mage</h2>
 <p>Mages shape raw magical energy into powerful effects using spell construction. They choose a magical Form (elemental school) and build spells on the fly by combining Base effects with Modifiers. Every spell is a resource decision&mdash;more powerful effects cost more Focus. Focus is maintained through preparation and deliberate action, but erodes when targeted or hit.</p>
 
@@ -717,6 +961,8 @@ em { color: var(--ink-light); }
 <div class="chapter" id="ch7">
 <h1><span class="chapter-num">Chapter VII</span>Subclasses</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>At <strong>Level 3</strong>, you choose a Subclass that further defines your role. Subclasses blend the strengths of two class archetypes and unlock powerful new abilities at levels 3, 8, 11, 14, and 17.</p>
 
 <table>
@@ -733,6 +979,7 @@ em { color: var(--ink-light); }
 
 <!-- WARMASTER -->
 <div class="fighter-section">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="7" y="1" width="2" height="10" fill="#5b3b1e" class="pixel"/><rect x="5" y="2" width="6" height="2" fill="#8b1a1a" class="pixel"/><rect x="4" y="4" width="8" height="3" fill="#8b1a1a" class="pixel"/><rect x="5" y="7" width="6" height="2" fill="#a02020" class="pixel"/><rect x="6" y="9" width="4" height="2" fill="#8b1a1a" class="pixel"/><rect x="7" y="4" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="11" width="2" height="4" fill="#5b3b1e" class="pixel"/></svg></div>
 <h2>Warmaster</h2>
 <p><em>Fighter Subclass &mdash; The Battlefield Commander</em></p>
 <p>Warmasters lead from the front. They empower allies, control positioning, and turn every engagement into a coordinated assault.</p>
@@ -752,6 +999,7 @@ em { color: var(--ink-light); }
 
 <!-- ASSASSIN -->
 <div class="rogue-section">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="6" y="1" width="4" height="3" fill="#e8d5a3" class="pixel"/><rect x="5" y="4" width="6" height="2" fill="#d4c090" class="pixel"/><rect x="6" y="6" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="3" width="2" height="1" fill="#1a1a2a" class="pixel"/><rect x="6" y="2" width="1" height="1" fill="#1a1a2a" class="pixel"/><rect x="9" y="2" width="1" height="1" fill="#1a1a2a" class="pixel"/><rect x="12" y="3" width="2" height="6" fill="#c0c0c0" class="pixel"/><rect x="12" y="2" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="11" y="9" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="12" y="11" width="2" height="2" fill="#5b3b1e" class="pixel"/></svg></div>
 <h2>Assassin</h2>
 <p><em>Rogue Subclass &mdash; The Silent Killer</em></p>
 <p>Assassins specialize in ending fights before they begin. Poison, ambush, and overwhelming burst damage are their tools.</p>
@@ -771,6 +1019,7 @@ em { color: var(--ink-light); }
 
 <!-- ARCANIST -->
 <div class="mage-section">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="7" y="1" width="2" height="2" fill="#9a9aee" class="pixel"/><rect x="5" y="3" width="6" height="2" fill="#7a7ace" class="pixel"/><rect x="6" y="5" width="4" height="2" fill="#6a6abe" class="pixel"/><rect x="7" y="7" width="2" height="2" fill="#5a5aae" class="pixel"/><rect x="3" y="3" width="2" height="2" fill="#9a9aee" opacity="0.5" class="pixel"/><rect x="11" y="3" width="2" height="2" fill="#9a9aee" opacity="0.5" class="pixel"/><rect x="7" y="0" width="2" height="1" fill="#c0c0ff" opacity="0.6" class="pixel"/><rect x="4" y="7" width="2" height="2" fill="#9a9aee" opacity="0.3" class="pixel"/><rect x="10" y="7" width="2" height="2" fill="#9a9aee" opacity="0.3" class="pixel"/><rect x="6" y="9" width="4" height="2" fill="#4a4a7a" opacity="0.4" class="pixel"/></svg></div>
 <h2>Arcanist</h2>
 <p><em>Mage Subclass &mdash; The Master of Raw Power</em></p>
 <p>Arcanists push the boundaries of spell construction, layering more modifiers and amplifying their effects beyond what other casters can achieve.</p>
@@ -790,6 +1039,7 @@ em { color: var(--ink-light); }
 
 <!-- SKIRMISHER -->
 <div class="fighter-section" style="border-left: 4px solid var(--rogue-color); padding-left: 15px;">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="2" width="4" height="3" fill="#5b3b1e" class="pixel"/><rect x="3" y="5" width="6" height="3" fill="#4b2b0e" class="pixel"/><rect x="2" y="8" width="4" height="2" fill="#5b3b1e" class="pixel"/><rect x="6" y="8" width="4" height="2" fill="#5b3b1e" class="pixel"/><rect x="4" y="10" width="2" height="2" fill="#4b2b0e" class="pixel"/><rect x="7" y="10" width="2" height="2" fill="#4b2b0e" class="pixel"/><rect x="10" y="4" width="3" height="1" fill="#5a4a1a" opacity="0.4" class="pixel"/><rect x="12" y="3" width="3" height="1" fill="#5a4a1a" opacity="0.3" class="pixel"/><rect x="11" y="5" width="2" height="1" fill="#5a4a1a" opacity="0.2" class="pixel"/></svg></div>
 <h2 style="color: #5a4a1a;">Skirmisher</h2>
 <p><em>Fighter / Rogue Hybrid &mdash; The Mobile Striker</em></p>
 <p>Skirmishers refuse to stand still. They weave in and out of combat, striking where defenses are weakest and never staying long enough to be pinned down.</p>
@@ -809,6 +1059,7 @@ em { color: var(--ink-light); }
 
 <!-- SPELLBLADE -->
 <div class="fighter-section" style="border-left: 4px solid var(--mage-color); padding-left: 15px;">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="7" y="1" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="7" y="3" width="2" height="4" fill="#c0c0c0" class="pixel"/><rect x="7" y="7" width="2" height="2" fill="#b0b0b0" class="pixel"/><rect x="5" y="9" width="6" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="11" width="2" height="3" fill="#5b3b1e" class="pixel"/><rect x="9" y="2" width="2" height="2" fill="#7a7ace" opacity="0.5" class="pixel"/><rect x="10" y="4" width="2" height="2" fill="#9a9aee" opacity="0.4" class="pixel"/><rect x="5" y="3" width="2" height="2" fill="#7a7ace" opacity="0.4" class="pixel"/><rect x="4" y="5" width="2" height="2" fill="#9a9aee" opacity="0.3" class="pixel"/><rect x="8" y="1" width="1" height="8" fill="#e0e0e0" opacity="0.3" class="pixel"/></svg></div>
 <h2 style="color: #3a3a6a;">Spellblade</h2>
 <p><em>Fighter / Mage Hybrid &mdash; The Arcane Warrior</em></p>
 <p>Spellblades channel magic through their weapons, combining martial skill with arcane power into a devastating hybrid combat style.</p>
@@ -828,6 +1079,7 @@ em { color: var(--ink-light); }
 
 <!-- TRICKSTER -->
 <div class="rogue-section" style="border-left: 4px solid var(--mage-color); padding-left: 15px;">
+<div class="subclass-icon"><svg width="48" height="48" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="2" width="8" height="2" fill="#2d5a5a" class="pixel"/><rect x="3" y="4" width="10" height="4" fill="#1d4a4a" class="pixel"/><rect x="4" y="8" width="8" height="2" fill="#2d5a5a" class="pixel"/><rect x="5" y="5" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="9" y="5" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="6" y="10" width="4" height="1" fill="#3d6a6a" class="pixel"/><rect x="3" y="3" width="2" height="1" fill="#3d6a6a" class="pixel"/><rect x="11" y="3" width="2" height="1" fill="#3d6a6a" class="pixel"/></svg></div>
 <h2 style="color: #2d5a5a;">Trickster</h2>
 <p><em>Rogue / Mage Hybrid &mdash; The Master of Misdirection</em></p>
 <p>Tricksters blend illusion magic with roguish cunning, controlling the battlefield through deception, debuffs, and misdirection.</p>
@@ -851,6 +1103,8 @@ em { color: var(--ink-light); }
 <!-- CHAPTER 8: FEATS -->
 <div class="chapter" id="ch8">
 <h1><span class="chapter-num">Chapter VIII</span>Feats</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
 
 <p>Feats are special abilities that let you customize your character beyond their class. There are two types:</p>
 <ul>
@@ -1012,6 +1266,8 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter" id="ch9">
 <h1><span class="chapter-num">Chapter IX</span>Skills &amp; Proficiencies</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <h2>Proficiency</h2>
 <p>Proficiency represents training and experience. When you are proficient in a weapon, armor type, skill, or tool, you add your <strong>Proficiency Bonus of +2</strong> to relevant rolls.</p>
 
@@ -1080,9 +1336,89 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter" id="ch10">
 <h1><span class="chapter-num">Chapter X</span>Equipment</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
+<!-- Scene 3: The Armory -->
+<div class="large-scene">
+<svg width="700" height="200" viewBox="0 0 175 50" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<!-- Back wall -->
+<rect x="0" y="0" width="175" height="36" fill="#3d2517" class="pixel"/>
+<rect x="0" y="36" width="175" height="14" fill="#2c1810" class="pixel"/>
+<!-- Stone wall texture -->
+<rect x="0" y="0" width="20" height="8" fill="#4a3728" opacity="0.3" class="pixel"/>
+<rect x="22" y="0" width="18" height="8" fill="#4a3728" opacity="0.2" class="pixel"/>
+<rect x="42" y="0" width="22" height="8" fill="#4a3728" opacity="0.3" class="pixel"/>
+<rect x="10" y="10" width="20" height="8" fill="#4a3728" opacity="0.2" class="pixel"/>
+<rect x="32" y="10" width="18" height="8" fill="#4a3728" opacity="0.3" class="pixel"/>
+<!-- Torch left -->
+<rect x="12" y="8" width="2" height="6" fill="#5b3b1e" class="pixel"/>
+<rect x="11" y="4" width="4" height="4" fill="#ff6b35" opacity="0.7" class="pixel"/>
+<rect x="12" y="3" width="2" height="2" fill="#ffcc00" opacity="0.6" class="pixel"/>
+<rect x="10" y="2" width="2" height="2" fill="#ff6b35" opacity="0.3" class="pixel"/>
+<!-- Torch right -->
+<rect x="160" y="8" width="2" height="6" fill="#5b3b1e" class="pixel"/>
+<rect x="159" y="4" width="4" height="4" fill="#ff6b35" opacity="0.7" class="pixel"/>
+<rect x="160" y="3" width="2" height="2" fill="#ffcc00" opacity="0.6" class="pixel"/>
+<rect x="162" y="2" width="2" height="2" fill="#ff6b35" opacity="0.3" class="pixel"/>
+<!-- Weapon rack (left section) -->
+<rect x="20" y="12" width="2" height="24" fill="#5b3b1e" class="pixel"/><!-- left post -->
+<rect x="50" y="12" width="2" height="24" fill="#5b3b1e" class="pixel"/><!-- right post -->
+<rect x="20" y="14" width="32" height="2" fill="#4b2b0e" class="pixel"/><!-- top bar -->
+<rect x="20" y="26" width="32" height="2" fill="#4b2b0e" class="pixel"/><!-- bottom bar -->
+<!-- Sword on rack -->
+<rect x="26" y="8" width="2" height="14" fill="#c0c0c0" class="pixel"/>
+<rect x="25" y="22" width="4" height="2" fill="#c9a84c" class="pixel"/>
+<rect x="26" y="24" width="2" height="4" fill="#5b3b1e" class="pixel"/>
+<!-- Axe on rack -->
+<rect x="34" y="10" width="2" height="12" fill="#5b3b1e" class="pixel"/>
+<rect x="30" y="8" width="6" height="4" fill="#a0a0a0" class="pixel"/>
+<rect x="32" y="7" width="4" height="2" fill="#b0b0b0" class="pixel"/>
+<!-- Spear on rack -->
+<rect x="42" y="6" width="2" height="18" fill="#5b3b1e" class="pixel"/>
+<rect x="41" y="4" width="4" height="4" fill="#c0c0c0" class="pixel"/>
+<rect x="42" y="3" width="2" height="2" fill="#d4d4d4" class="pixel"/>
+<!-- Armor stand (center) -->
+<rect x="72" y="14" width="2" height="22" fill="#4b2b0e" class="pixel"/><!-- stand pole -->
+<rect x="66" y="8" width="14" height="2" fill="#4b2b0e" class="pixel"/><!-- cross bar -->
+<rect x="68" y="10" width="10" height="4" fill="#7b7b7b" class="pixel"/><!-- shoulder plates -->
+<rect x="70" y="14" width="6" height="8" fill="#8b8b8b" class="pixel"/><!-- chestplate -->
+<rect x="72" y="16" width="2" height="4" fill="#a0a0a0" opacity="0.5" class="pixel"/><!-- highlight -->
+<rect x="68" y="14" width="2" height="6" fill="#6b6b6b" class="pixel"/><!-- left arm plate -->
+<rect x="76" y="14" width="2" height="6" fill="#6b6b6b" class="pixel"/><!-- right arm plate -->
+<rect x="70" y="22" width="6" height="4" fill="#7b7b7b" class="pixel"/><!-- tasset -->
+<!-- Shield wall (right section) -->
+<rect x="95" y="12" width="2" height="24" fill="#5b3b1e" class="pixel"/>
+<rect x="95" y="12" width="40" height="2" fill="#4b2b0e" class="pixel"/>
+<!-- Round shield -->
+<rect x="100" y="14" width="10" height="2" fill="#8b7355" class="pixel"/>
+<rect x="98" y="16" width="14" height="6" fill="#7b6345" class="pixel"/>
+<rect x="100" y="22" width="10" height="2" fill="#8b7355" class="pixel"/>
+<rect x="103" y="18" width="4" height="2" fill="#c9a84c" class="pixel"/><!-- boss -->
+<!-- Kite shield -->
+<rect x="118" y="14" width="8" height="2" fill="#6b5b3e" class="pixel"/>
+<rect x="116" y="16" width="12" height="4" fill="#5b4b2e" class="pixel"/>
+<rect x="118" y="20" width="8" height="4" fill="#6b5b3e" class="pixel"/>
+<rect x="120" y="24" width="4" height="2" fill="#5b4b2e" class="pixel"/>
+<rect x="121" y="17" width="2" height="6" fill="#8b1a1a" opacity="0.5" class="pixel"/><!-- heraldry -->
+<!-- Bow hanging on wall -->
+<rect x="145" y="10" width="2" height="4" fill="#5b3b1e" class="pixel"/>
+<rect x="143" y="14" width="2" height="2" fill="#5b3b1e" class="pixel"/>
+<rect x="141" y="16" width="2" height="4" fill="#5b3b1e" class="pixel"/>
+<rect x="143" y="20" width="2" height="2" fill="#5b3b1e" class="pixel"/>
+<rect x="145" y="22" width="2" height="4" fill="#5b3b1e" class="pixel"/>
+<rect x="146" y="10" width="1" height="16" fill="#c9a84c" opacity="0.4" class="pixel"/><!-- bowstring -->
+<!-- Staff leaning on wall -->
+<rect x="152" y="6" width="2" height="28" fill="#5b3b1e" class="pixel"/>
+<rect x="150" y="4" width="6" height="4" fill="#4a7ab5" opacity="0.4" class="pixel"/>
+<rect x="151" y="5" width="4" height="2" fill="#7ab5ee" opacity="0.5" class="pixel"/>
+<!-- Floor / wooden planks -->
+<rect x="0" y="36" width="175" height="2" fill="#5b3b1e" opacity="0.5" class="pixel"/>
+</svg>
+</div>
+
 <h2>Melee Weapons</h2>
 
-<h3>Piercing Weapons</h3>
+<div class="weapon-type-header"><svg width="36" height="36" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="7" y="1" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="7" y="3" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="7" y="5" width="2" height="2" fill="#b0b0b0" class="pixel"/><rect x="7" y="7" width="2" height="2" fill="#a0a0a0" class="pixel"/><rect x="5" y="9" width="6" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="11" width="2" height="3" fill="#5b3b1e" class="pixel"/></svg><h3>Piercing Weapons</h3></div>
 <table>
 <thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
@@ -1094,7 +1430,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </tbody>
 </table>
 
-<h3>Slashing Weapons</h3>
+<div class="weapon-type-header"><svg width="36" height="36" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="3" y="1" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="4" y="3" width="2" height="2" fill="#c0c0c0" class="pixel"/><rect x="5" y="5" width="3" height="2" fill="#b0b0b0" class="pixel"/><rect x="6" y="7" width="3" height="2" fill="#a0a0a0" class="pixel"/><rect x="4" y="9" width="8" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="11" width="2" height="3" fill="#5b3b1e" class="pixel"/></svg><h3>Slashing Weapons</h3></div>
 <table>
 <thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
@@ -1107,7 +1443,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </tbody>
 </table>
 
-<h3>Bludgeoning Weapons</h3>
+<div class="weapon-type-header"><svg width="36" height="36" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="5" y="1" width="6" height="2" fill="#8b8b8b" class="pixel"/><rect x="4" y="3" width="8" height="2" fill="#7b7b7b" class="pixel"/><rect x="5" y="5" width="6" height="2" fill="#6b6b6b" class="pixel"/><rect x="7" y="7" width="2" height="2" fill="#c9a84c" class="pixel"/><rect x="7" y="9" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="7" y="11" width="2" height="3" fill="#5b3b1e" class="pixel"/></svg><h3>Bludgeoning Weapons</h3></div>
 <table>
 <thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
@@ -1134,7 +1470,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </tbody>
 </table>
 
-<h2>Ranged Weapons</h2>
+<h2><svg class="section-header-icon" width="28" height="28" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="10" y="1" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="8" y="3" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="6" y="5" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="4" y="7" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="2" y="9" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="2" y="11" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="11" y="2" width="1" height="10" fill="#c9a84c" opacity="0.5" class="pixel"/><rect x="12" y="1" width="1" height="2" fill="#c0c0c0" class="pixel"/></svg> Ranged Weapons</h2>
 <table>
 <thead><tr><th>Weapon</th><th>Damage</th><th>Properties</th></tr></thead>
 <tbody>
@@ -1155,7 +1491,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <p><strong>Range:</strong> Attacks at long range have Minor Disadvantage.</p>
 </div>
 
-<h2>Armor</h2>
+<h2><svg class="section-header-icon" width="28" height="28" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="1" width="6" height="2" fill="#8b8b8b" class="pixel"/><rect x="3" y="3" width="8" height="2" fill="#7b7b7b" class="pixel"/><rect x="2" y="5" width="10" height="3" fill="#8b8b8b" class="pixel"/><rect x="3" y="8" width="8" height="2" fill="#7b7b7b" class="pixel"/><rect x="4" y="10" width="6" height="2" fill="#6b6b6b" class="pixel"/><rect x="6" y="4" width="2" height="4" fill="#a0a0a0" opacity="0.4" class="pixel"/></svg> Armor</h2>
 <table>
 <thead><tr><th>Armor</th><th>Proficient</th><th>Non-Proficient</th></tr></thead>
 <tbody>
@@ -1172,7 +1508,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <p>The three-tier armor system is streamlined: Light gives +1, Medium gives +2, Heavy gives +3. No per-type Reflex caps&mdash;the penalties for heavier armor already discourage mismatched builds.</p>
 </div>
 
-<h2>Adventuring Gear</h2>
+<h2><svg class="section-header-icon" width="28" height="28" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="1" width="6" height="2" fill="#c9a84c" class="pixel"/><rect x="3" y="3" width="8" height="2" fill="#5b3b1e" class="pixel"/><rect x="2" y="5" width="10" height="4" fill="#4b2b0e" class="pixel"/><rect x="3" y="9" width="8" height="3" fill="#5b3b1e" class="pixel"/><rect x="4" y="12" width="6" height="1" fill="#4b2b0e" class="pixel"/><rect x="5" y="0" width="4" height="2" fill="#c9a84c" opacity="0.6" class="pixel"/><rect x="5" y="5" width="4" height="2" fill="#6b4b2e" opacity="0.4" class="pixel"/></svg> Adventuring Gear</h2>
 <table>
 <thead><tr><th>Item</th><th>Description</th></tr></thead>
 <tbody>
@@ -1195,6 +1531,77 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <!-- CHAPTER 11: COMBAT -->
 <div class="chapter" id="ch11">
 <h1><span class="chapter-num">Chapter XI</span>Combat</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
+<!-- Scene 5: The Battle Grid -->
+<div class="large-scene">
+<svg width="700" height="250" viewBox="0 0 175 62" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<!-- Grid lines (top-down battle map) -->
+<rect x="10" y="2" width="155" height="58" fill="#e8d5a3" opacity="0.15" class="pixel"/>
+<!-- Vertical grid lines -->
+<rect x="10" y="2" width="1" height="58" fill="#8b7355" opacity="0.3" class="pixel"/>
+<rect x="25" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="40" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="55" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="70" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="85" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="100" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="115" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="130" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="145" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="160" y="2" width="1" height="58" fill="#8b7355" opacity="0.2" class="pixel"/>
+<!-- Horizontal grid lines -->
+<rect x="10" y="2" width="155" height="1" fill="#8b7355" opacity="0.3" class="pixel"/>
+<rect x="10" y="10" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="18" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="26" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="34" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="42" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="50" width="155" height="1" fill="#8b7355" opacity="0.2" class="pixel"/>
+<rect x="10" y="58" width="155" height="1" fill="#8b7355" opacity="0.3" class="pixel"/>
+<!-- Wall/obstacle tiles -->
+<rect x="55" y="10" width="15" height="8" fill="#5b4b2e" opacity="0.5" class="pixel"/>
+<rect x="115" y="26" width="15" height="8" fill="#5b4b2e" opacity="0.5" class="pixel"/>
+<rect x="25" y="42" width="15" height="8" fill="#5b4b2e" opacity="0.5" class="pixel"/>
+<!-- Fighter token (red circle with sword icon) -->
+<rect x="72" y="28" width="10" height="10" fill="#8b1a1a" opacity="0.8" class="pixel"/>
+<rect x="74" y="30" width="6" height="6" fill="#a02020" class="pixel"/>
+<rect x="76" y="29" width="2" height="8" fill="#c0c0c0" opacity="0.7" class="pixel"/><!-- sword -->
+<!-- Rogue token (green, flanking position) -->
+<rect x="117" y="36" width="10" height="10" fill="#2d4a2d" opacity="0.8" class="pixel"/>
+<rect x="119" y="38" width="6" height="6" fill="#3a6a3a" class="pixel"/>
+<rect x="120" y="39" width="2" height="2" fill="#c0c0c0" opacity="0.6" class="pixel"/><!-- dagger -->
+<rect x="123" y="41" width="2" height="2" fill="#c0c0c0" opacity="0.6" class="pixel"/><!-- dagger -->
+<!-- Mage token (blue, at range) -->
+<rect x="27" y="12" width="10" height="10" fill="#1a3a5c" opacity="0.8" class="pixel"/>
+<rect x="29" y="14" width="6" height="6" fill="#2a5a8c" class="pixel"/>
+<rect x="31" y="13" width="2" height="8" fill="#5b3b1e" opacity="0.6" class="pixel"/><!-- staff -->
+<!-- Enemy tokens (dark red/brown) -->
+<rect x="102" y="28" width="10" height="10" fill="#4a2a1a" opacity="0.8" class="pixel"/>
+<rect x="104" y="30" width="6" height="6" fill="#5a3a2a" class="pixel"/>
+<rect x="106" y="31" width="2" height="2" fill="#ff4500" opacity="0.5" class="pixel"/><!-- eye -->
+<rect x="102" y="44" width="10" height="10" fill="#4a2a1a" opacity="0.8" class="pixel"/>
+<rect x="104" y="46" width="6" height="6" fill="#5a3a2a" class="pixel"/>
+<rect x="106" y="47" width="2" height="2" fill="#ff4500" opacity="0.5" class="pixel"/>
+<!-- Spell zone (blue aura around mage's target area) -->
+<rect x="85" y="42" width="15" height="8" fill="#4a9ad5" opacity="0.15" class="pixel"/>
+<rect x="86" y="43" width="13" height="6" fill="#4a9ad5" opacity="0.1" class="pixel"/>
+<rect x="87" y="44" width="2" height="2" fill="#8ac5ee" opacity="0.3" class="pixel"/>
+<rect x="93" y="46" width="2" height="2" fill="#8ac5ee" opacity="0.3" class="pixel"/>
+<!-- Ranged attack arrow (from mage to enemy) -->
+<rect x="37" y="17" width="2" height="2" fill="#8ac5ee" opacity="0.5" class="pixel"/>
+<rect x="42" y="18" width="2" height="2" fill="#8ac5ee" opacity="0.4" class="pixel"/>
+<rect x="47" y="20" width="2" height="2" fill="#8ac5ee" opacity="0.3" class="pixel"/>
+<!-- Flanking indicator lines -->
+<rect x="112" y="38" width="5" height="1" fill="#4a8a4a" opacity="0.4" class="pixel"/>
+<rect x="127" y="38" width="5" height="1" fill="#4a8a4a" opacity="0.4" class="pixel"/>
+<!-- Movement trail (dotted for rogue) -->
+<rect x="130" y="50" width="2" height="2" fill="#2d4a2d" opacity="0.2" class="pixel"/>
+<rect x="134" y="48" width="2" height="2" fill="#2d4a2d" opacity="0.2" class="pixel"/>
+<rect x="138" y="46" width="2" height="2" fill="#2d4a2d" opacity="0.15" class="pixel"/>
+</svg>
+</div>
 
 <h2>The Core Roll</h2>
 <div class="rule-box">
@@ -1229,16 +1636,16 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <h2>Actions &amp; the Action Economy</h2>
 <p>Each character has <strong>2 Actions per turn</strong>. Actions can be spent on:</p>
 <ul>
-<li><strong>Attack</strong> &mdash; Make one melee or ranged attack.</li>
-<li><strong>Move</strong> &mdash; Move up to your movement speed (default 30 ft). You can split movement around other actions.</li>
-<li><strong>Dodge</strong> &mdash; Prepare to evade. Used as a reaction when attacked.</li>
-<li><strong>Block</strong> &mdash; Brace to reduce damage. Used as a reaction when attacked.</li>
-<li><strong>Use an Item</strong> &mdash; Draw a weapon, drink a potion, interact with an object.</li>
-<li><strong>Cast a Spell</strong> &mdash; Cast a spell (Mages; costs vary).</li>
-<li><strong>Grapple</strong> &mdash; Attempt to grab a creature (contested Might check).</li>
-<li><strong>Shove</strong> &mdash; Push a creature 5 feet or knock them prone (contested Might check).</li>
-<li><strong>Stabilize</strong> &mdash; Attempt to stabilize a downed ally (costs 2 actions).</li>
-<li><strong>Hold Action</strong> &mdash; Reserve an action for a reaction.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="6" y="1" width="2" height="2" fill="#d4d4d4" class="pixel"/><rect x="5" y="3" width="2" height="4" fill="#c0c0c0" class="pixel"/><rect x="3" y="7" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="2" y="4" width="3" height="1" fill="#b0b0b0" opacity="0.5" class="pixel"/></svg> <strong>Attack</strong> &mdash; Make one melee or ranged attack.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="2" width="4" height="3" fill="#5b3b1e" class="pixel"/><rect x="2" y="5" width="6" height="3" fill="#4b2b0e" class="pixel"/><rect x="3" y="8" width="2" height="2" fill="#5b3b1e" class="pixel"/><rect x="7" y="4" width="2" height="1" fill="#8b1a1a" opacity="0.4" class="pixel"/><rect x="8" y="3" width="2" height="1" fill="#8b1a1a" opacity="0.3" class="pixel"/></svg> <strong>Move</strong> &mdash; Move up to your movement speed (default 30 ft). You can split movement around other actions.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="1" width="2" height="2" fill="#d4a080" class="pixel"/><rect x="3" y="3" width="4" height="2" fill="#5b4b2e" class="pixel"/><rect x="2" y="5" width="2" height="3" fill="#4a3728" class="pixel"/><rect x="6" y="5" width="2" height="3" fill="#4a3728" class="pixel"/><rect x="1" y="3" width="2" height="1" fill="#a0c0d0" opacity="0.4" class="pixel"/><rect x="7" y="3" width="2" height="1" fill="#a0c0d0" opacity="0.4" class="pixel"/></svg> <strong>Dodge</strong> &mdash; Prepare to evade. Used as a reaction when attacked.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#8b7355" class="pixel"/><rect x="2" y="3" width="6" height="3" fill="#7b6345" class="pixel"/><rect x="3" y="6" width="4" height="2" fill="#6b5b3e" class="pixel"/><rect x="4" y="4" width="2" height="2" fill="#c9a84c" class="pixel"/></svg> <strong>Block</strong> &mdash; Brace to reduce damage. Used as a reaction when attacked.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#4a9ad5" class="pixel"/><rect x="2" y="3" width="6" height="4" fill="#3a8ac5" class="pixel"/><rect x="3" y="7" width="4" height="2" fill="#2a7ab5" class="pixel"/><rect x="4" y="3" width="2" height="2" fill="#8ac5ee" opacity="0.5" class="pixel"/></svg> <strong>Use an Item</strong> &mdash; Draw a weapon, drink a potion, interact with an object.</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="3" width="4" height="3" fill="#d4a080" class="pixel"/><rect x="2" y="1" width="2" height="3" fill="#7a7ace" opacity="0.5" class="pixel"/><rect x="6" y="1" width="2" height="3" fill="#7a7ace" opacity="0.5" class="pixel"/><rect x="4" y="0" width="2" height="2" fill="#9a9aee" opacity="0.4" class="pixel"/><rect x="3" y="6" width="4" height="2" fill="#d4a080" class="pixel"/></svg> <strong>Cast a Spell</strong> &mdash; Cast a spell (Mages; costs vary).</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="1" y="2" width="3" height="3" fill="#d4a080" class="pixel"/><rect x="6" y="2" width="3" height="3" fill="#d4a080" class="pixel"/><rect x="3" y="3" width="4" height="3" fill="#d4a080" class="pixel"/><rect x="4" y="5" width="2" height="2" fill="#c09070" class="pixel"/></svg> <strong>Grapple</strong> &mdash; Attempt to grab a creature (contested Might check).</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="2" y="2" width="4" height="4" fill="#d4a080" class="pixel"/><rect x="1" y="3" width="2" height="2" fill="#c09070" class="pixel"/><rect x="6" y="3" width="3" height="1" fill="#c09070" opacity="0.5" class="pixel"/><rect x="7" y="2" width="2" height="1" fill="#c09070" opacity="0.4" class="pixel"/><rect x="8" y="4" width="2" height="1" fill="#c09070" opacity="0.3" class="pixel"/></svg> <strong>Shove</strong> &mdash; Push a creature 5 feet or knock them prone (contested Might check).</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="2" y="2" width="6" height="2" fill="#e8d5a3" class="pixel"/><rect x="1" y="4" width="8" height="3" fill="#e8d5a3" class="pixel"/><rect x="4" y="3" width="2" height="4" fill="#8b1a1a" class="pixel"/><rect x="3" y="4" width="4" height="2" fill="#8b1a1a" class="pixel"/></svg> <strong>Stabilize</strong> &mdash; Attempt to stabilize a downed ally (costs 2 actions).</li>
+<li><svg class="action-icon" width="18" height="18" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="4" y="3" width="2" height="3" fill="#c9a84c" class="pixel"/><rect x="3" y="6" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="5" y="3" width="1" height="3" fill="#e8d5a3" opacity="0.5" class="pixel"/></svg> <strong>Hold Action</strong> &mdash; Reserve an action for a reaction.</li>
 </ul>
 
 <h2>Reactions</h2>
@@ -1300,6 +1707,8 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter mage-section" id="ch12">
 <h1><span class="chapter-num">Chapter XII</span>Magic System</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Magic in this system is built on <strong>spell construction</strong>. Rather than memorizing a fixed list of spells, Mages choose a magical <strong>Form</strong> (elemental school) and learn to construct spells by combining <strong>Base effects</strong> with <strong>Modifiers</strong>. Every spell costs Focus, and more powerful combinations cost more.</p>
 
 <h2>How Spell Construction Works</h2>
@@ -1342,6 +1751,80 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <tr><td><strong>Zone</strong></td><td>2</td><td>Create an effect in a specified 15 ft cube. Affects all creatures in the area.</td></tr>
 </tbody>
 </table>
+
+<!-- Scene 4: Elemental Magic -->
+<div class="large-scene">
+<svg width="700" height="250" viewBox="0 0 175 62" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;">
+<!-- Dark arcane background -->
+<rect x="0" y="0" width="175" height="62" fill="#0a0a1a" class="pixel"/>
+<!-- Ground glow -->
+<rect x="0" y="50" width="175" height="12" fill="#1a0e1e" class="pixel"/>
+<!-- Magic circle on ground -->
+<rect x="55" y="48" width="65" height="2" fill="#4a3a6a" opacity="0.3" class="pixel"/>
+<rect x="50" y="50" width="75" height="2" fill="#4a3a6a" opacity="0.2" class="pixel"/>
+<rect x="55" y="52" width="65" height="2" fill="#4a3a6a" opacity="0.15" class="pixel"/>
+<!-- Mage figure (center, dramatic casting pose) -->
+<rect x="82" y="22" width="6" height="2" fill="#1a3a5c" class="pixel"/><!-- hat -->
+<rect x="80" y="24" width="10" height="2" fill="#1a3a5c" opacity="0.8" class="pixel"/><!-- hat brim -->
+<rect x="84" y="26" width="4" height="2" fill="#d4a080" class="pixel"/><!-- face -->
+<rect x="82" y="28" width="8" height="2" fill="#1a3a5c" opacity="0.8" class="pixel"/><!-- shoulders -->
+<rect x="83" y="30" width="6" height="6" fill="#0a2a4c" class="pixel"/><!-- robe -->
+<rect x="82" y="36" width="8" height="6" fill="#0a1a3c" class="pixel"/><!-- robe lower -->
+<rect x="81" y="42" width="10" height="4" fill="#0a1a3c" class="pixel"/><!-- robe base -->
+<rect x="80" y="46" width="4" height="4" fill="#0a1a3c" class="pixel"/><!-- left robe -->
+<rect x="88" y="46" width="4" height="4" fill="#0a1a3c" class="pixel"/><!-- right robe -->
+<!-- Left arm extended (fire + ice) -->
+<rect x="72" y="26" width="8" height="2" fill="#1a3a5c" opacity="0.6" class="pixel"/><!-- left arm -->
+<rect x="78" y="28" width="4" height="2" fill="#0a2a4c" class="pixel"/>
+<!-- Right arm extended (earth + lightning) -->
+<rect x="92" y="26" width="8" height="2" fill="#1a3a5c" opacity="0.6" class="pixel"/><!-- right arm -->
+<rect x="90" y="28" width="4" height="2" fill="#0a2a4c" class="pixel"/>
+<!-- FIRE (erupting from left hand) -->
+<rect x="66" y="20" width="4" height="4" fill="#ff4500" opacity="0.7" class="pixel"/>
+<rect x="64" y="16" width="6" height="4" fill="#ff6b35" opacity="0.6" class="pixel"/>
+<rect x="66" y="12" width="4" height="4" fill="#ffaa00" opacity="0.5" class="pixel"/>
+<rect x="68" y="8" width="2" height="4" fill="#ffcc00" opacity="0.4" class="pixel"/>
+<rect x="62" y="18" width="2" height="4" fill="#ff4500" opacity="0.4" class="pixel"/>
+<rect x="70" y="14" width="2" height="4" fill="#ff6b35" opacity="0.4" class="pixel"/>
+<rect x="66" y="22" width="4" height="4" fill="#cc3700" opacity="0.5" class="pixel"/>
+<!-- ICE (from left hand, arcing down) -->
+<rect x="56" y="24" width="4" height="4" fill="#4a9ad5" opacity="0.6" class="pixel"/>
+<rect x="52" y="28" width="4" height="4" fill="#8ac5ee" opacity="0.5" class="pixel"/>
+<rect x="48" y="32" width="4" height="4" fill="#a0d5ff" opacity="0.4" class="pixel"/>
+<rect x="50" y="26" width="2" height="2" fill="#c0e8ff" opacity="0.4" class="pixel"/>
+<rect x="54" y="30" width="2" height="2" fill="#c0e8ff" opacity="0.3" class="pixel"/>
+<rect x="58" y="22" width="2" height="2" fill="#8ac5ee" opacity="0.3" class="pixel"/>
+<!-- EARTH (rising from below, center-right) -->
+<rect x="104" y="38" width="6" height="6" fill="#8b7355" opacity="0.7" class="pixel"/>
+<rect x="102" y="32" width="8" height="6" fill="#7b6345" opacity="0.6" class="pixel"/>
+<rect x="106" y="28" width="4" height="4" fill="#9b8365" opacity="0.5" class="pixel"/>
+<rect x="108" y="24" width="2" height="4" fill="#a08040" opacity="0.4" class="pixel"/>
+<rect x="100" y="40" width="4" height="6" fill="#6b5b3e" opacity="0.5" class="pixel"/>
+<rect x="110" y="36" width="4" height="8" fill="#6b5b3e" opacity="0.5" class="pixel"/>
+<rect x="104" y="44" width="6" height="4" fill="#5b4b2e" opacity="0.4" class="pixel"/>
+<!-- WIND (swirling around the mage) -->
+<rect x="76" y="34" width="3" height="1" fill="#a0c0d0" opacity="0.4" class="pixel"/>
+<rect x="78" y="36" width="4" height="1" fill="#b0d0e0" opacity="0.35" class="pixel"/>
+<rect x="93" y="32" width="4" height="1" fill="#a0c0d0" opacity="0.4" class="pixel"/>
+<rect x="95" y="34" width="3" height="1" fill="#b0d0e0" opacity="0.35" class="pixel"/>
+<rect x="74" y="38" width="5" height="1" fill="#90b0c0" opacity="0.3" class="pixel"/>
+<rect x="92" y="38" width="5" height="1" fill="#90b0c0" opacity="0.3" class="pixel"/>
+<rect x="78" y="40" width="4" height="1" fill="#a0c0d0" opacity="0.25" class="pixel"/>
+<!-- LIGHTNING (arcing from right hand) -->
+<rect x="100" y="22" width="2" height="2" fill="#ffee55" opacity="0.7" class="pixel"/>
+<rect x="102" y="20" width="2" height="2" fill="#ffdd33" opacity="0.6" class="pixel"/>
+<rect x="104" y="18" width="4" height="2" fill="#ffcc00" opacity="0.7" class="pixel"/>
+<rect x="108" y="16" width="2" height="4" fill="#ffee55" opacity="0.6" class="pixel"/>
+<rect x="110" y="12" width="2" height="4" fill="#ffdd33" opacity="0.5" class="pixel"/>
+<rect x="112" y="8" width="2" height="4" fill="#ffee55" opacity="0.4" class="pixel"/>
+<rect x="106" y="14" width="2" height="2" fill="#ffcc00" opacity="0.5" class="pixel"/>
+<rect x="114" y="6" width="2" height="2" fill="#ffcc00" opacity="0.3" class="pixel"/>
+<!-- Energy glow around mage -->
+<rect x="78" y="28" width="2" height="2" fill="#c9a84c" opacity="0.3" class="pixel"/>
+<rect x="92" y="28" width="2" height="2" fill="#c9a84c" opacity="0.3" class="pixel"/>
+<rect x="84" y="20" width="4" height="2" fill="#c9a84c" opacity="0.2" class="pixel"/>
+</svg>
+</div>
 
 <h2>Modifiers</h2>
 <p>There are 23 Modifiers organized into two categories: <strong>Resource-Tied</strong> (linked to your class resource) and <strong>Element-Tied</strong> (linked to your chosen Form).</p>
@@ -1389,7 +1872,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <p>These modifiers are available only to Mages who have chosen the corresponding elemental Form.</p>
 
 <div class="spell-form">
-<h3>Fire Modifiers</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="5" y="1" width="2" height="2" fill="#ff6b35" class="pixel"/><rect x="4" y="3" width="4" height="2" fill="#ff4500" class="pixel"/><rect x="3" y="5" width="6" height="2" fill="#cc3700" class="pixel"/><rect x="3" y="7" width="6" height="2" fill="#ff6b35" class="pixel"/><rect x="4" y="9" width="4" height="2" fill="#ffaa00" class="pixel"/><rect x="5" y="3" width="2" height="2" fill="#ffcc00" class="pixel" opacity="0.7"/></svg>Fire Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
@@ -1401,7 +1884,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </div>
 
 <div class="spell-form">
-<h3>Water Modifiers</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="5" y="1" width="2" height="2" fill="#4a9ad5" class="pixel"/><rect x="4" y="3" width="4" height="2" fill="#3a8ac5" class="pixel"/><rect x="3" y="5" width="6" height="2" fill="#2a7ab5" class="pixel"/><rect x="3" y="7" width="6" height="2" fill="#3a8ac5" class="pixel"/><rect x="4" y="9" width="4" height="2" fill="#4a9ad5" class="pixel"/><rect x="5" y="5" width="2" height="2" fill="#8ac5ee" class="pixel" opacity="0.5"/></svg>Water Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
@@ -1413,7 +1896,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </div>
 
 <div class="spell-form">
-<h3>Air Modifiers</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="2" y="3" width="8" height="1" fill="#a0c0d0" class="pixel"/><rect x="3" y="5" width="7" height="1" fill="#b0d0e0" class="pixel"/><rect x="1" y="7" width="9" height="1" fill="#90b0c0" class="pixel"/><rect x="4" y="9" width="5" height="1" fill="#a0c0d0" class="pixel"/></svg>Air Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
@@ -1425,7 +1908,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </div>
 
 <div class="spell-form">
-<h3>Earth Modifiers</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="2" y="6" width="8" height="2" fill="#8b7355" class="pixel"/><rect x="1" y="8" width="10" height="2" fill="#7b6345" class="pixel"/><rect x="3" y="4" width="3" height="2" fill="#9b8365" class="pixel"/><rect x="7" y="3" width="3" height="3" fill="#8b7355" class="pixel"/><rect x="5" y="5" width="2" height="1" fill="#a08040" class="pixel" opacity="0.5"/></svg>Earth Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
@@ -1437,7 +1920,7 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 </div>
 
 <div class="spell-form">
-<h3>Lightning Modifiers</h3>
+<h3><svg width="24" height="24" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated; vertical-align: middle; margin-right: 6px;"><rect x="6" y="0" width="2" height="2" fill="#ffee55" class="pixel"/><rect x="5" y="2" width="3" height="2" fill="#ffdd33" class="pixel"/><rect x="4" y="4" width="4" height="2" fill="#ffcc00" class="pixel"/><rect x="5" y="6" width="3" height="2" fill="#ffdd33" class="pixel"/><rect x="6" y="8" width="2" height="2" fill="#ffee55" class="pixel"/><rect x="7" y="10" width="1" height="2" fill="#ffcc00" class="pixel"/></svg>Lightning Modifiers</h3>
 <table>
 <thead><tr><th>Modifier</th><th>Cost</th><th>Effect</th></tr></thead>
 <tbody>
@@ -1455,21 +1938,23 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter" id="ch13">
 <h1><span class="chapter-num">Chapter XIII</span>Conditions &amp; Status Effects</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Conditions represent temporary impairments or states. A creature can have multiple conditions simultaneously. Unless noted, conditions end when their source ends or after the specified duration.</p>
 
 <table>
 <thead><tr><th>Condition</th><th>Effect</th></tr></thead>
 <tbody>
-<tr><td><strong>Exposed</strong></td><td>The creature has dropped its guard. Attacks against it deal <strong>+2 bonus damage</strong>. Ends at the start of the creature's next turn (unless reapplied).</td></tr>
-<tr><td><strong>Prone</strong></td><td>The creature is on the ground. Melee attacks against it gain +1 to hit. Ranged attacks against it have &minus;1 to hit. Standing costs 15 ft of movement.</td></tr>
-<tr><td><strong>Grappled</strong></td><td>The creature's speed is 0. It cannot move away from the grappler. It can still attack and take actions normally. Escape requires a contested Might or Reflex check.</td></tr>
-<tr><td><strong>Stunned</strong></td><td>The creature loses 1 action on its next turn. It cannot take reactions. Attacks against it have Minor Advantage.</td></tr>
-<tr><td><strong>Blinded</strong></td><td>The creature cannot see. Attacks it makes have Minor Disadvantage. Attacks against it have Minor Advantage. It automatically fails any check requiring sight.</td></tr>
-<tr><td><strong>Frightened</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks while the source of fear is within line of sight. It cannot willingly move closer to the source.</td></tr>
-<tr><td><strong>Poisoned</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks. At the start of each of its turns, it takes 1d4 poison damage. Lasts 3 rounds or until cured.</td></tr>
-<tr><td><strong>Burning</strong></td><td>The creature is on fire. At the start of each of its turns, it takes 1d4 fire damage. It can spend 1 action to extinguish the flames. Lasts until extinguished or 2 rounds.</td></tr>
-<tr><td><strong>Frozen</strong></td><td>The creature's speed is halved. It has Minor Disadvantage on Reflex-based checks and saves. Lasts 2 rounds.</td></tr>
-<tr><td><strong>Silenced</strong></td><td>The creature cannot speak or cast spells with verbal components. It cannot communicate verbally. Lasts until the effect ends.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#8b7355" class="pixel"/><rect x="2" y="3" width="6" height="2" fill="#7b6345" class="pixel"/><rect x="3" y="5" width="4" height="2" fill="#6b5b3e" class="pixel"/><rect x="4" y="7" width="2" height="2" fill="#5b4b2e" class="pixel"/><rect x="1" y="4" width="2" height="1" fill="#8b7355" class="pixel"/><rect x="7" y="4" width="2" height="1" fill="#8b7355" class="pixel"/><rect x="0" y="0" width="10" height="10" fill="none" stroke="#8b1a1a" stroke-width="0.5" stroke-dasharray="1,1" opacity="0.6"/></svg> <strong>Exposed</strong></td><td>The creature has dropped its guard. Attacks against it deal <strong>+2 bonus damage</strong>. Ends at the start of the creature's next turn (unless reapplied).</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="2" width="2" height="2" fill="#d4a080" class="pixel"/><rect x="2" y="4" width="6" height="2" fill="#5b4b2e" class="pixel"/><rect x="6" y="6" width="4" height="2" fill="#5b4b2e" class="pixel"/><rect x="1" y="6" width="3" height="2" fill="#4a3728" class="pixel"/><rect x="7" y="8" width="2" height="2" fill="#4a3728" class="pixel"/></svg> <strong>Prone</strong></td><td>The creature is on the ground. Melee attacks against it gain +1 to hit. Ranged attacks against it have &minus;1 to hit. Standing costs 15 ft of movement.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="1" y="3" width="2" height="2" fill="#7b7b7b" class="pixel"/><rect x="3" y="4" width="2" height="2" fill="#8b8b8b" class="pixel"/><rect x="5" y="4" width="2" height="2" fill="#8b8b8b" class="pixel"/><rect x="7" y="3" width="2" height="2" fill="#7b7b7b" class="pixel"/><rect x="1" y="5" width="2" height="2" fill="#6b6b6b" class="pixel"/><rect x="7" y="5" width="2" height="2" fill="#6b6b6b" class="pixel"/><rect x="3" y="6" width="4" height="1" fill="#7b7b7b" class="pixel"/></svg> <strong>Grappled</strong></td><td>The creature's speed is 0. It cannot move away from the grappler. It can still attack and take actions normally. Escape requires a contested Might or Reflex check.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="2" y="1" width="2" height="2" fill="#ffcc00" class="pixel"/><rect x="6" y="1" width="2" height="2" fill="#ffcc00" class="pixel"/><rect x="4" y="0" width="2" height="2" fill="#ffaa00" class="pixel"/><rect x="1" y="3" width="2" height="2" fill="#ffaa00" opacity="0.6" class="pixel"/><rect x="7" y="3" width="2" height="2" fill="#ffaa00" opacity="0.6" class="pixel"/><rect x="4" y="4" width="2" height="2" fill="#d4a080" class="pixel"/><rect x="3" y="6" width="4" height="2" fill="#5b4b2e" class="pixel"/><rect x="3" y="8" width="2" height="2" fill="#4a3728" class="pixel"/><rect x="5" y="8" width="2" height="2" fill="#4a3728" class="pixel"/></svg> <strong>Stunned</strong></td><td>The creature loses 1 action on its next turn. It cannot take reactions. Attacks against it have Minor Advantage.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="2" y="2" width="6" height="2" fill="#e8d5a3" class="pixel"/><rect x="1" y="4" width="8" height="3" fill="#e8d5a3" class="pixel"/><rect x="3" y="4" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="6" y="4" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="1" y="3" width="3" height="4" fill="none" stroke="#8b1a1a" stroke-width="0.8" opacity="0.8"/><rect x="6" y="3" width="3" height="4" fill="none" stroke="#8b1a1a" stroke-width="0.8" opacity="0.8"/></svg> <strong>Blinded</strong></td><td>The creature cannot see. Attacks it makes have Minor Disadvantage. Attacks against it have Minor Advantage. It automatically fails any check requiring sight.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#e8d5a3" opacity="0.7" class="pixel"/><rect x="2" y="3" width="6" height="2" fill="#e8d5a3" opacity="0.5" class="pixel"/><rect x="3" y="5" width="4" height="2" fill="#e8d5a3" opacity="0.4" class="pixel"/><rect x="4" y="7" width="2" height="2" fill="#e8d5a3" opacity="0.3" class="pixel"/><rect x="4" y="3" width="2" height="2" fill="#1a1a2a" class="pixel"/><rect x="3" y="2" width="1" height="1" fill="#1a1a2a" class="pixel"/><rect x="6" y="2" width="1" height="1" fill="#1a1a2a" class="pixel"/></svg> <strong>Frightened</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks while the source of fear is within line of sight. It cannot willingly move closer to the source.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="3" y="1" width="4" height="2" fill="#6a9a6a" class="pixel"/><rect x="3" y="3" width="4" height="3" fill="#4a8a4a" class="pixel"/><rect x="4" y="6" width="2" height="2" fill="#3a7a3a" class="pixel"/><rect x="5" y="8" width="2" height="2" fill="#2d6a2d" class="pixel"/><rect x="7" y="7" width="1" height="1" fill="#4a8a4a" opacity="0.6" class="pixel"/><rect x="6" y="9" width="2" height="1" fill="#2d6a2d" opacity="0.5" class="pixel"/><rect x="4" y="2" width="2" height="2" fill="#8ac58a" opacity="0.4" class="pixel"/></svg> <strong>Poisoned</strong></td><td>The creature has Minor Disadvantage on attack rolls and skill checks. At the start of each of its turns, it takes 1d4 poison damage. Lasts 3 rounds or until cured.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="1" width="2" height="2" fill="#ffcc00" class="pixel"/><rect x="3" y="3" width="4" height="2" fill="#ff6b35" class="pixel"/><rect x="2" y="5" width="6" height="2" fill="#ff4500" class="pixel"/><rect x="3" y="7" width="4" height="2" fill="#cc3700" class="pixel"/><rect x="4" y="3" width="2" height="2" fill="#ffee55" opacity="0.6" class="pixel"/></svg> <strong>Burning</strong></td><td>The creature is on fire. At the start of each of its turns, it takes 1d4 fire damage. It can spend 1 action to extinguish the flames. Lasts until extinguished or 2 rounds.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="4" y="0" width="2" height="2" fill="#8ac5ee" class="pixel"/><rect x="2" y="2" width="2" height="2" fill="#a0d5ff" class="pixel"/><rect x="6" y="2" width="2" height="2" fill="#a0d5ff" class="pixel"/><rect x="3" y="4" width="4" height="2" fill="#4a9ad5" class="pixel"/><rect x="1" y="4" width="2" height="2" fill="#8ac5ee" class="pixel"/><rect x="7" y="4" width="2" height="2" fill="#8ac5ee" class="pixel"/><rect x="2" y="6" width="2" height="2" fill="#a0d5ff" class="pixel"/><rect x="6" y="6" width="2" height="2" fill="#a0d5ff" class="pixel"/><rect x="4" y="8" width="2" height="2" fill="#8ac5ee" class="pixel"/></svg> <strong>Frozen</strong></td><td>The creature's speed is halved. It has Minor Disadvantage on Reflex-based checks and saves. Lasts 2 rounds.</td></tr>
+<tr><td><svg class="condition-icon" width="20" height="20" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated;"><rect x="2" y="3" width="6" height="3" fill="#d4a080" class="pixel"/><rect x="3" y="6" width="4" height="2" fill="#d4a080" class="pixel"/><rect x="3" y="6" width="4" height="1" fill="#8b1a1a" opacity="0.4" class="pixel"/><rect x="1" y="3" width="2" height="5" fill="none" stroke="#7b7b7b" stroke-width="0.8" opacity="0.6"/><rect x="7" y="3" width="2" height="5" fill="none" stroke="#7b7b7b" stroke-width="0.8" opacity="0.6"/></svg> <strong>Silenced</strong></td><td>The creature cannot speak or cast spells with verbal components. It cannot communicate verbally. Lasts until the effect ends.</td></tr>
 </tbody>
 </table>
 
@@ -1479,6 +1964,8 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <!-- CHAPTER 14: HEALTH, DEATH & RECOVERY -->
 <div class="chapter" id="ch14">
 <h1><span class="chapter-num">Chapter XIV</span>Health, Death &amp; Recovery</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
 
 <h2>Hit Points</h2>
 <p>Your starting HP is determined by your <strong>race's base HP</strong>. At Level 1 and beyond, you gain additional HP per level based on your class:</p>
@@ -1568,6 +2055,8 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <div class="chapter" id="ch15">
 <h1><span class="chapter-num">Chapter XV</span>Level Progression</h1>
 
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
+
 <p>Every level grants a meaningful new ability. There are no dead levels. Leveling occurs at the GM's discretion. The table below shows what every character gains at each level, with class-specific features described in Chapters VI and VII.</p>
 
 <table>
@@ -1652,6 +2141,8 @@ While wielding a single one-handed weapon and nothing in the other hand, you gai
 <!-- CHAPTER 16: APPENDIX -->
 <div class="chapter" id="ch16">
 <h1><span class="chapter-num">Chapter XVI</span>Appendix &mdash; Quick Reference</h1>
+
+<div class="chapter-art"><svg width="500" height="20" viewBox="0 0 125 5" xmlns="http://www.w3.org/2000/svg" style="image-rendering: pixelated;"><rect x="0" y="2" width="125" height="1" fill="#c9a84c" opacity="0.2" class="pixel"/><rect x="58" y="0" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="56" y="2" width="8" height="1" fill="#c9a84c" class="pixel"/><rect x="58" y="3" width="4" height="2" fill="#c9a84c" class="pixel"/><rect x="60" y="1" width="2" height="3" fill="#e8d5a3" class="pixel" opacity="0.5"/><rect x="40" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="82" y="2" width="3" height="1" fill="#c9a84c" opacity="0.4" class="pixel"/><rect x="20" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/><rect x="103" y="2" width="2" height="1" fill="#c9a84c" opacity="0.3" class="pixel"/></svg></div>
 
 <h2>Core Mechanics Cheat Sheet</h2>
 <table>
